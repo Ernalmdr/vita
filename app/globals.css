@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #f9f7f2;
+    @apply font-sans text-gray-800 flex flex-col min-h-screen;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative font-normal tracking-wide transition-all duration-300 cursor-pointer pb-1;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute w-0 h-[1px] bottom-0 left-1/2 bg-white/70 transition-all duration-300 -translate-x-1/2;
+  }
+  .nav-link:hover::after, .nav-link.active::after {
+    @apply w-4/5;
+  }
+
+  .hero-bg {
+    background: linear-gradient(135deg, #5d0014 0%, #2a0009 100%);
+  }
+
+  .info-card {
+    @apply transition-all duration-300;
+  }
+  .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(93, 0, 20, 0.1);
+  }
+
+  .page-section {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .pulse-mystery {
+    animation: pulse-slow 3s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
