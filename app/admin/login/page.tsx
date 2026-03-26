@@ -1,6 +1,7 @@
 'use client'
 
-import { useFormState, useFormStatus } from 'react-dom'
+import { useActionState } from 'react'
+import { useFormStatus } from 'react-dom'
 import { login } from '@/app/actions/auth'
 import { Lock, Mail, Loader2, ArrowRight } from 'lucide-react'
 
@@ -29,12 +30,12 @@ function SubmitButton() {
   )
 }
 
-const initialState = {
+const initialState: { error: string | null } = {
   error: null,
 }
 
 export default function LoginPage() {
-  const [state, formAction] = useFormState(login, initialState)
+  const [state, formAction] = useActionState(login, initialState)
 
   return (
     <div className="min-h-screen bg-congress-cream flex items-center justify-center p-4 md:p-8 font-sans relative overflow-hidden">

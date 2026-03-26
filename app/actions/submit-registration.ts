@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache';
 
 export async function submitRegistration(formData: FormData) {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     
     const fullName = formData.get('fullName') as string;
     const email = formData.get('email') as string;
