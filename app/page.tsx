@@ -753,7 +753,7 @@ export default function Home() {
                 <p className="text-lg md:text-2xl font-light italic mb-8 text-white/90">The International Congress on Multidisciplinary Approaches to the Heart</p>
                 <div className="inline-flex items-center gap-4 bg-white/10 px-6 py-2 rounded-full backdrop-blur-md border border-white/20">
                   <i className="fa-regular fa-calendar text-congress-gold"></i>
-                  <span className="uppercase tracking-widest text-sm font-semibold">May 2–3, 2026 • İzmir, Türkiye</span>
+                  <span className="uppercase tracking-widest text-sm font-semibold">May 9–10, 2026 • İzmir, Türkiye</span>
                 </div>
               </div>
             </header>
@@ -767,7 +767,7 @@ export default function Home() {
               <div className="prose prose-lg mx-auto text-gray-600 font-sans leading-relaxed text-justify bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
                 <p className="font-bold text-gray-800 text-xl mb-6">Dear Colleagues,</p>
                 <p className="mb-6">It is our great pleasure to invite you to <span className="text-congress-red font-serif font-bold">Vita Cordis: The International Congress on Multidisciplinary Approaches to the Heart</span>, to be held in <strong>İzmir</strong>, with the aim of addressing multidisciplinary perspectives on cardiovascular health, sharing current scientific developments, and collaboratively shaping the future of healthcare.</p>
-                <p className="mb-6">Taking place on <strong>May 2–3, 2026</strong>, Vita Cordis seeks to provide a comprehensive scientific platform that brings together diverse disciplines involved in cardiovascular care.</p>
+                <p className="mb-6">Taking place on <strong>May 9–10, 2026</strong>, Vita Cordis seeks to provide a comprehensive scientific platform that brings together diverse disciplines involved in cardiovascular care.</p>
                 <div className="bg-congress-cream p-6 rounded-lg border-l-4 border-congress-red my-6">
                   <p className="font-semibold text-gray-800 mb-2">The congress will focus on:</p>
                   <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
@@ -781,7 +781,6 @@ export default function Home() {
                 <div className="text-right mt-12 border-t border-gray-100 pt-6">
                   <p className="font-serif text-lg text-gray-800 mb-2">Sincerely,</p>
                   <p className="font-bold text-congress-red text-xl font-serif mt-4">Vita Cordis Organizing Committee</p>
-                  <p className="text-sm text-gray-500 uppercase tracking-widest mt-1">EMSA Dokuz Eylül</p>
                 </div>
               </div>
             </div>
@@ -801,7 +800,7 @@ export default function Home() {
                   <div className="w-16 h-16 rounded-full bg-congress-red text-white flex items-center justify-center flex-shrink-0 text-2xl"><i className="fa-solid fa-map-location-dot"></i></div>
                   <div>
                     <h3 className="text-2xl font-serif font-bold text-gray-800 mb-2">Congress Venue</h3>
-                    <p className="text-gray-600">The Vita Cordis Congress will be held at the <strong>DEU Faculty of Medicine, Classrooms Building, Founding Faculty Members Conference Hall</strong> in Izmir on May 2-3, 2026.</p>
+                    <p className="text-gray-600">The Vita Cordis Congress will be held at the <strong>DEU Faculty of Medicine, Classrooms Building, Founding Faculty Members Conference Hall</strong> in İzmir on May 9–10, 2026.</p>
                   </div>
                 </div>
                 <div className="info-card bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start">
@@ -888,7 +887,7 @@ export default function Home() {
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transform transition duration-500 hover:scale-105">
                   <div className="bg-congress-red text-white p-6 flex justify-between items-center">
                     <h3 className="text-2xl font-serif font-bold">Day 1</h3>
-                    <span className="text-sm bg-white/20 px-3 py-1 rounded">May 2, 2026</span>
+                    <span className="text-sm bg-white/20 px-3 py-1 rounded">May 9, 2026</span>
                   </div>
                   <div className="p-12 text-center flex flex-col items-center justify-center h-64 bg-gray-50">
                     <i className="fa-solid fa-calendar-day text-5xl text-congress-gold mb-6 opacity-70"></i>
@@ -900,7 +899,7 @@ export default function Home() {
                 <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transform transition duration-500 hover:scale-105">
                   <div className="bg-congress-gold text-white p-6 flex justify-between items-center">
                     <h3 className="text-2xl font-serif font-bold text-congress-red">Day 2</h3>
-                    <span className="text-sm bg-congress-red/20 text-congress-red px-3 py-1 rounded font-bold">May 3, 2026</span>
+                    <span className="text-sm bg-congress-red/20 text-congress-red px-3 py-1 rounded font-bold">May 10, 2026</span>
                   </div>
                   <div className="p-12 text-center flex flex-col items-center justify-center h-64 bg-gray-50">
                     <i className="fa-solid fa-calendar-check text-5xl text-congress-red mb-6 opacity-70"></i>
@@ -937,7 +936,7 @@ export default function Home() {
                     </ul>
                   </div>
                   <div className="mt-8">
-                    <a href="mailto:basharabdu2006@gmail.com" className="inline-flex items-center justify-center w-full bg-congress-red text-white px-6 py-3 rounded-xl hover:bg-congress-dark transition font-bold shadow-lg">
+                    <a href="mailto:vita.cordis.2026@gmail.com" className="inline-flex items-center justify-center w-full bg-congress-red text-white px-6 py-3 rounded-xl hover:bg-congress-dark transition font-bold shadow-lg">
                       <i className="fa-regular fa-paper-plane mr-2"></i> Submit Abstract via Email
                     </a>
                   </div>
@@ -1002,7 +1001,7 @@ export default function Home() {
             <p className="text-white/70 text-xs">International Congress on Multidisciplinary Approaches to the Heart</p>
           </div>
           <div className="text-sm space-y-2">
-            <p><i className="fa-solid fa-envelope mr-2 text-congress-gold"></i> dokuz-eylul@emsa-europe.eu</p>
+            <p><i className="fa-solid fa-envelope mr-2 text-congress-gold"></i> vita.cordis.2026@gmail.com</p>
             <p><i className="fa-solid fa-phone mr-2 text-congress-gold"></i> +90 544 213 45 96</p>
             <p><i className="fa-solid fa-location-dot mr-2 text-congress-gold"></i> İzmir, Türkiye</p>
           </div>
