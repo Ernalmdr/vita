@@ -673,6 +673,7 @@ export default function Home() {
     { id: "welcome", html: <>Welcome<br />Message</>, mobileText: "Welcome Message" },
     { id: "general-info", html: <>General<br />Information</>, mobileText: "General Information" },
     { id: "organization", html: <>Organization<br />Committee</>, mobileText: "Organization Committee" },
+    { id: "speakers", html: <>Invited<br />Speakers</>, mobileText: "Invited Speakers" },
     { id: "program", html: <>Scientific<br />Program</>, mobileText: "Scientific Program" },
     { id: "abstract", html: <>Abstract<br />Submission</>, mobileText: "Abstract Submission" },
     { id: "social", html: <>Social<br />Events</>, mobileText: "Social Events" },
@@ -833,42 +834,251 @@ export default function Home() {
         {activeSection === "organization" && (
           <div className="page-section py-12">
             <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Organization Committee</h2>
-                <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
-                <p className="text-gray-500 max-w-2xl mx-auto text-lg">We can't wait to introduce our grand team to you.</p>
-              </div>
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Organization Committee</h2>
+                    <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
+                    <p className="text-gray-500 max-w-2xl mx-auto text-lg">Meet the dedicated team behind Vita Cordis.</p>
+                </div>
+                
+                {/* Advisors */}
+                <div className="mb-20">
+                    <h3 className="text-2xl font-serif font-bold text-congress-gold mb-10 text-center uppercase tracking-widest">Congress Advisors</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                        
+                        {/* Advisor 1 */}
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
+                            <div className="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
+                                <i className="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
+                                <img src="/ceren-sayarer.jpg" className="speaker-img" alt="Asst. Prof. Ceren SAYARER" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900 mb-1">Asst. Prof. Ceren SAYARER</h4>
+                            <p className="text-sm text-congress-red font-semibold">Congress Advisor</p>
+                        </div>
+                        
+                        {/* Advisor 2 */}
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
+                            <div className="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
+                                <i className="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
+                                <img src="/tugra-gencpinar.jpg" className="speaker-img" alt="Prof. Dr. Tuğra GENÇPINAR" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900 mb-1">Prof. Dr. Tuğra GENÇPINAR</h4>
+                            <p className="text-sm text-congress-red font-semibold">Chief Physician, Dokuz Eylül University Hospital</p>
+                        </div>
+                        
+                        {/* Advisor 3 */}
+                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
+                            <div className="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
+                                <i className="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
+                                <img src="/serdar-bayrak.jpg" className="speaker-img" alt="Prof. Dr. Serdar BAYRAK" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900 mb-1">Prof. Dr. Serdar BAYRAK</h4>
+                            <p className="text-sm text-congress-red font-semibold">Dean, Dokuz Eylül University Faculty of Medicine</p>
+                        </div>
+                    </div>
+                </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 max-w-4xl mx-auto">
-                <div className="text-center">
-                  <div className="w-32 h-32 md:w-40 md:h-40 mx-auto bg-gray-100 rounded-full mb-4 flex items-center justify-center border-4 border-dashed border-gray-300 pulse-mystery">
-                    <i className="fa-solid fa-question text-5xl text-gray-300"></i>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-400">Loading...</h3>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 md:w-40 md:h-40 mx-auto bg-gray-100 rounded-full mb-4 flex items-center justify-center border-4 border-dashed border-gray-300 pulse-mystery shadow-sm" style={{ animationDelay: '0.5s' }}>
-                    <i className="fa-solid fa-question text-5xl text-gray-300"></i>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-400">Loading...</h3>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 md:w-40 md:h-40 mx-auto bg-gray-100 rounded-full mb-4 flex items-center justify-center border-4 border-dashed border-gray-300 pulse-mystery" style={{ animationDelay: '1s' }}>
-                    <i className="fa-solid fa-question text-5xl text-gray-300"></i>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-400">Loading...</h3>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 md:w-40 md:h-40 mx-auto bg-gray-100 rounded-full mb-4 flex items-center justify-center border-4 border-dashed border-gray-300 pulse-mystery" style={{ animationDelay: '1.5s' }}>
-                    <i className="fa-solid fa-question text-5xl text-gray-300"></i>
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-400">Loading...</h3>
-                </div>
-              </div>
+                {/* Organizing Committee */}
+                <div>
+                    <h3 className="text-2xl font-serif font-bold text-congress-gold mb-10 text-center uppercase tracking-widest">Organizing Committee</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                        
+                        {/* Organizer 1 */}
+                        <div className="text-center group">
+                            <div className="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition text-gray-300">
+                                <i className="fa-solid fa-user text-4xl absolute z-0"></i>
+                                <img src="/muge-sagim.jpg" className="speaker-img" alt="Gülsüm Müge Sağım" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900">Gülsüm Müge Sağım</h4>
+                            <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">General Coordination</p>
+                        </div>
 
-              <div className="text-center mt-16">
-                <span className="inline-block bg-congress-red text-white px-8 py-3 rounded-full font-bold shadow-md tracking-widest uppercase text-sm">To Be Announced Soon</span>
-              </div>
+                        {/* Organizer 2 */}
+                        <div className="text-center group">
+                            <div className="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition text-gray-300">
+                                <i className="fa-solid fa-user text-4xl absolute z-0"></i>
+                                <img src="/sultan-hilal.jpg" className="speaker-img" alt="Sultan Hilal Solak" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900">Sultan Hilal Solak</h4>
+                            <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Scientific Coordinator</p>
+                        </div>
+
+                        {/* Organizer 3 */}
+                        <div className="text-center group">
+                            <div className="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition text-gray-300">
+                                <i className="fa-solid fa-user text-4xl absolute z-0"></i>
+                                <img src="/baran-demircan.jpg" className="speaker-img" alt="Tolgay Baran Demircan" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900">Tolgay Baran Demircan</h4>
+                            <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Scientific Coordinator</p>
+                        </div>
+
+                        {/* Organizer 4 */}
+                        <div className="text-center group">
+                            <div className="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition text-gray-300">
+                                <i className="fa-solid fa-user text-4xl absolute z-0"></i>
+                                <img src="/tunahan-ergurhan.jpg" className="speaker-img" alt="Tunahan Ergürhan" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900">Tunahan Ergürhan</h4>
+                            <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Technical Coordinator</p>
+                        </div>
+
+                        {/* Organizer 5 */}
+                        <div className="text-center group">
+                            <div className="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition text-gray-300">
+                                <i className="fa-solid fa-user text-4xl absolute z-0"></i>
+                                <img src="/beyza-bilir.jpg" className="speaker-img" alt="Beyza Bilge Bilir" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900">Beyza Bilge Bilir</h4>
+                            <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Design Coordinator</p>
+                        </div>
+
+                        {/* Organizer 6 */}
+                        <div className="text-center group">
+                            <div className="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition text-gray-300">
+                                <i className="fa-solid fa-user text-4xl absolute z-0"></i>
+                                <img src="/piraye-dundar.jpg" className="speaker-img" alt="Piraye Dündar" />
+                            </div>
+                            <h4 className="text-lg font-bold text-gray-900">Piraye Dündar</h4>
+                            <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Finance Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        )}
+
+        {/* ── INVITED SPEAKERS ── */}
+        {activeSection === "speakers" && (
+          <div className="page-section py-12">
+            <div className="container mx-auto px-6 max-w-5xl">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Invited Speakers</h2>
+                    <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
+                    <p className="text-gray-500 max-w-2xl mx-auto text-lg">We are honored to host distinguished experts in cardiovascular health.</p>
+                </div>
+                
+                <div className="space-y-12">
+                    {/* Carlos A. Mestres */}
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                                <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                                <img src="/carlos-mestres.jpg" className="speaker-img" alt="Prof. Dr. Carlos A. Mestres" />
+                            </div>
+                            <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Carlos A. Mestres</h3>
+                            <p className="text-congress-red font-semibold mt-2">Cardiovascular & Thoracic Surgeon</p>
+                        </div>
+                        <div className="w-full md:w-2/3">
+                            <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Prof. Dr. Carlos A. Mestres is an internationally renowned cardiovascular and thoracic surgeon whose career spans over four decades of clinical excellence, academic leadership, and global collaboration. Trained in Barcelona and holding both MD and PhD degrees, he has built a distinguished career across Europe, the Middle East, and Asia, contributing to some of the most advanced centres in cardiac surgery.</p>
+                                <p>He has held senior and leadership positions at institutions such as University Hospital Zürich and Cleveland Clinic Abu Dhabi, and currently serves as Extraordinary Professor of Cardiothoracic Surgery at the University of the Free State. Throughout his career, he has also been actively involved in postgraduate education, surgical training, and international academic programmes, shaping the next generation of cardiac surgeons.</p>
+                                <p>Prof. Mestres’ clinical and research interests focus on complex cardiac procedures, including valvular heart disease, aortic pathology, and infective endocarditis. His work integrates surgical innovation with a deep understanding of cardiovascular pathology, contributing to improved patient outcomes and advancing contemporary cardiac surgery.</p>
+                                <p>With an extensive portfolio of international lectures, scientific contributions, and collaborative projects, Prof. Dr. Mestres stands as a leading figure in global cardiovascular surgery. His participation in Vita Cordis 2026 offers a unique opportunity for attendees to gain insights from a surgeon whose career reflects both technical mastery and academic depth.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Alberto Ortiz */}
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                                <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                                <img src="/alberto-ortiz.jpg" className="speaker-img" alt="Prof. Dr. Alberto Ortiz" />
+                            </div>
+                            <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Alberto Ortiz</h3>
+                            <p className="text-congress-red font-semibold mt-2">Head of Nephrology & Hypertension</p>
+                        </div>
+                        <div className="w-full md:w-2/3">
+                            <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Alberto Ortiz, MD, PhD, FERA, is the Head of Nephrology and Hypertension at Fundación Jiménez Díaz and Professor of Medicine at Universidad Autónoma de Madrid. He serves as Renal Science Chair of the European Renal Association (ERA).</p>
+                                <p>Ortiz also coordinates Spain’s Kidney Research Network (REDINREN/RICORS2040) and SPACKDc, focusing on CKD genomics. He received the 2020 ERA Award for Research Excellence and co-chaired the KDIGO Controversies Conference on Kidney Health in 2023.</p>
+                                <p>His research focuses on CKD epidemiology, acute kidney injury, and CKD pathogenesis. He was Editor-in-Chief of Clinical Kidney Journal from 2014 to 2022.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Mladen Milovanovic */}
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                                <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                                <img src="/mladen-milovanovic.jpg" className="speaker-img" alt="Dr. Mladen Milovanovic" />
+                            </div>
+                            <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Dr. Mladen Milovanovic</h3>
+                            <p className="text-congress-red font-semibold mt-2">Consultant Cardiologist</p>
+                        </div>
+                        <div className="w-full md:w-2/3">
+                            <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Dr. Mladen Milovanovic is a Consultant Cardiologist with specialist qualifications in Cardiology and Internal Medicine, currently practicing in Sweden. He has extensive clinical experience across multiple healthcare systems, including work within the National Health Service (UK) and the Swedish healthcare system. His practice spans both inpatient and outpatient cardiology, with particular focus on heart failure management, acute cardiology, and cardiovascular diagnostics.</p>
+                                <p>In addition to his clinical work, Dr. Milovanovic has a strong academic and strategic interest in healthcare innovation and system development. He studied Strategy and Innovation at Warwick Business School, University of Warwick (Coventry/London), where he was awarded distinction for his work on advanced care delivery models, including Hospital at Home.</p>
+                                <p>His professional interests include heart failure, cardiovascular imaging, and the development of patient-centred and sustainable models of care. He is particularly engaged in exploring how clinical practice can be enhanced through innovation, system design, and emerging technologies, including digital health and artificial intelligence.</p>
+                                <p>Dr. Milovanovic has contributed to international discussions on healthcare innovation and clinical practice, and is committed to bridging high-quality clinical care with forward-looking healthcare solutions. He is currently based in Stockholm, Sweden, and is actively involved in international clinical and professional collaborations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Yasir Zaroug */}
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                                <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                                <img src="/yasir-zaroug.jpg" className="speaker-img" alt="Professor Yasir Zaroug" />
+                            </div>
+                            <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Professor Yasir Zaroug</h3>
+                            <p className="text-congress-red font-semibold mt-2">Diabetologist & Metabolic Medicine Researcher</p>
+                        </div>
+                        <div className="w-full md:w-2/3">
+                            <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Professor Zaroug is a distinguished Diabetologist, Metabolic Medicine Researcher, and Family Physician. He holds an IDF fellowship, a Master of Diabetes with Distinction from the University of Warwick, UK, a Master of Family Medicine, and a Postgraduate Award in Healthcare Administration, also from the University of Warwick, UK.</p>
+                                <p>He is also the founder of the CTC research hub center. Professor Zaroug has published numerous papers in the field and actively participates in international conferences, contributing significantly to the scientific community.</p>
+                                <p>His primary area of contribution lies in the management of cardiovascular risk through the primary prevention and control of Diabetes and obesity (Diabesity).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Kutsal Baran Özkurt */}
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                                <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                                <img src="/kutsal-baran.jpg" className="speaker-img" alt="Kutsal Baran Özkurt" />
+                            </div>
+                            <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Kutsal Baran Özkurt</h3>
+                            <p className="text-congress-red font-semibold mt-2">Engineer, Scientist & Entrepreneur</p>
+                        </div>
+                        <div className="w-full md:w-2/3">
+                            <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Kutsal Baran Özkurt is an engineer, scientist, and entrepreneur dedicated to advancing artificial intelligence in medicine. As the founder of Nexgene AI, he develops sophisticated artificial intelligence models with deep medical reasoning capabilities designed for use in clinical diagnosis and decision support processes.</p>
+                                <p>The AI solutions developed by his team are actively utilized by thousands of expert physicians at some of the world's premier healthcare and research institutions, including Harvard Medical School, MD Anderson Cancer Center, and Stanford Medicine.</p>
+                                <p>In addition to its national academic achievements at Teknofest, Nexgene AI has proven its success on a global scale by securing awards with its medical AI solutions in competitions hosted by internationally renowned organizations such as the MIT Media Lab, Nvidia, and StartX.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Mehmet Kocabey */}
+                    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                                <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                                <img src="/mehmet-kocabey.jpg" className="speaker-img" alt="Asst. Prof. Dr. Mehmet Kocabey" />
+                            </div>
+                            <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Asst. Prof. Dr. Mehmet Kocabey</h3>
+                            <p className="text-congress-red font-semibold mt-2">Clinical Geneticist</p>
+                        </div>
+                        <div className="w-full md:w-2/3">
+                            <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Mehmet is a clinical geneticist with a special interest in rare diseases. He graduated from Ankara University Faculty of Medicine in 2015. After obtaining his residency degree in medical genetics from Dokuz Eylül University Faculty of Medicine, he played a role in running genetic outpatient clinics in various cities across Turkey. He has diagnosed many patients and provided pre- and post-test genetic counselling. Additionally, he was involved in laboratory setup processes. He has advanced experience in both cytogenetic techniques (chromosome analysis, FISH, etc.) and molecular genetic techniques (Next Generation Sequencing, Sanger sequencing, PCR-based methods, deletion and duplication analyses, etc.). He has been working in the field of clinical and laboratory genetics for the last 11 years, and he has publications and conference presentations on rare diseases. Since 2023, he has been participating as an academic lecturer in undergraduate and postgraduate education at Dokuz Eylül University, Department of Medical Genetics.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
           </div>
         )}

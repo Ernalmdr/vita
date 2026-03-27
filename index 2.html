@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vita Cordis - International Congress</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        congress: {
+                            red: '#5d0014', 
+                            dark: '#2a0009', 
+                            cream: '#f9f7f2', 
+                            gold: '#d4af37' 
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Lato', sans-serif; 
+            background-color: #f9f7f2;
+        }
+        h1, h2, h3, h4, .menu-font { font-family: 'Playfair Display', serif; }
+        
+        .nav-link {
+            position: relative;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            padding-bottom: 5px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 50%;
+            background-color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 80%;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #5d0014 0%, #2a0009 100%);
+        }
+
+        .info-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(93, 0, 20, 0.1);
+        }
+
+        .page-section {
+            animation: fadeIn 0.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hidden-section {
+            display: none !important;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .form-input:focus {
+            border-color: #5d0014;
+            box-shadow: 0 0 0 3px rgba(93, 0, 20, 0.2);
+        }
+        
+        /* Gizem Efekti İçin Animasyon */
+        .pulse-mystery {
+            animation: pulse-slow 3s infinite;
+        }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+        
+        /* Resimlerin hata durumunda gizlenmesi yerine gri ikonun arkasında kalması için CSS düzeltmesi */
+        .speaker-img {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+        /* Eğer resim yüklenemezse veya hatalıysa opacity 0 olur ve arkadaki ikon görünür */
+        .speaker-img[data-error="true"] {
+            opacity: 0 !important;
+        }
+    </style>
+</head>
+<body class="text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-congress-red text-white shadow-xl transition-all duration-300 border-b border-white/10" id="navbar">
+        <div class="container mx-auto px-4">
+            <!-- Mobile Header -->
+            <div class="md:hidden flex justify-between items-center py-4">
+                <div class="flex items-center gap-3 cursor-pointer" onclick="showSection('welcome')">
+                    <!-- Mobile Logo (Ana logo yuvarlak kalıyor) -->
+                    <div class="h-10 w-10 rounded-full overflow-hidden bg-white border border-white/20 flex-shrink-0">
+                        <img src="d8054ee4-d777-4db0-ba40-20e7eb35bfb1.jpg" class="h-full w-full object-cover scale-[1.06]" alt="Vita Cordis Logo">
+                    </div>
+                    <span class="font-serif text-xl">Vita Cordis</span>
+                </div>
+                <button id="mobile-menu-btn" class="text-white text-2xl"><i class="fa-solid fa-bars"></i></button>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex flex-wrap justify-between items-center py-4 text-center text-sm lg:text-base leading-tight font-serif font-light">
+                
+                <!-- Sol Üst Logo -->
+                <div class="flex items-center gap-3 cursor-pointer mr-2 flex-shrink-0" onclick="showSection('welcome')">
+                    <div class="h-12 w-12 rounded-full overflow-hidden bg-white border border-white/20 shadow-md">
+                        <img src="d8054ee4-d777-4db0-ba40-20e7eb35bfb1.jpg" class="h-full w-full object-cover scale-[1.06]" alt="Vita Cordis Logo">
+                    </div>
+                </div>
+
+                <!-- Menü Linkleri -->
+                <div onclick="showSection('welcome')" class="nav-link px-2 active" id="nav-welcome">Welcome<br>Message</div>
+                <div onclick="showSection('general-info')" class="nav-link px-2" id="nav-general-info">General<br>Information</div>
+                <div onclick="showSection('organization')" class="nav-link px-2" id="nav-organization">Organization<br>Committee</div>
+                <div onclick="showSection('speakers')" class="nav-link px-2" id="nav-speakers">Invited<br>Speakers</div>
+                <div onclick="showSection('program')" class="nav-link px-2" id="nav-program">Scientific<br>Program</div>
+                <div onclick="showSection('abstract')" class="nav-link px-2" id="nav-abstract">Abstract<br>Submission</div>
+                <div onclick="showSection('social')" class="nav-link px-2" id="nav-social">Social<br>Events</div>
+                <div onclick="showSection('registration')" class="nav-link px-2" id="nav-registration">Registration &<br>Accommodation</div>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-congress-red border-t border-white/10 p-4 absolute w-full left-0 top-full shadow-lg">
+            <div onclick="showSection('welcome')" class="block py-3 border-b border-white/10 cursor-pointer hover:bg-white/5">Welcome Message</div>
+            <div onclick="showSection('general-info')" class="block py-3 border-b border-white/10 cursor-pointer hover:bg-white/5">General Information</div>
+            <div onclick="showSection('organization')" class="block py-3 border-b border-white/10 cursor-pointer hover:bg-white/5">Organization Committee</div>
+            <div onclick="showSection('speakers')" class="block py-3 border-b border-white/10 cursor-pointer hover:bg-white/5">Invited Speakers</div>
+            <div onclick="showSection('program')" class="block py-3 border-b border-white/10 cursor-pointer hover:bg-white/5">Scientific Program</div>
+            <div onclick="showSection('abstract')" class="block py-3 border-b border-white/10 cursor-pointer hover:bg-white/5">Abstract Submission</div>
+            <div onclick="showSection('social')" class="block py-3 border-b border-white/10 cursor-pointer hover:bg-white/5">Social Events</div>
+            <div onclick="showSection('registration')" class="block py-3 cursor-pointer hover:bg-white/5">Registration & Accommodation</div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow pt-[80px] md:pt-[100px]">
+
+        <!-- ================= PAGE 1: WELCOME ================= -->
+        <div id="welcome" class="page-section">
+            <header class="hero-bg relative min-h-[50vh] flex items-center justify-center text-white overflow-hidden mb-12">
+                <div class="container mx-auto px-6 text-center relative z-10 animate-fade-in-up py-10">
+                    <div class="mb-8 flex justify-center">
+                        <div class="w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-white/20 shadow-2xl overflow-hidden bg-white flex items-center justify-center">
+                            <img src="d8054ee4-d777-4db0-ba40-20e7eb35bfb1.jpg" class="w-full h-full object-cover scale-[1.06]" alt="Vita Cordis Logo">
+                        </div>
+                    </div>
+                    <h1 class="text-5xl md:text-8xl font-bold mb-4 font-serif tracking-tight drop-shadow-lg">Vita Cordis</h1>
+                    <p class="text-lg md:text-2xl font-light italic mb-8 text-white/90">The International Congress on Multidisciplinary Approaches to the Heart</p>
+                    <div class="inline-flex items-center gap-4 bg-white/10 px-6 py-2 rounded-full backdrop-blur-md border border-white/20">
+                        <i class="fa-regular fa-calendar text-congress-gold"></i>
+                        <span class="uppercase tracking-widest text-sm font-semibold">May 9–10, 2026 • İzmir, Türkiye</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="container mx-auto px-6 max-w-4xl pb-24">
+                <div class="text-center mb-14">
+                    <span class="text-congress-red font-bold tracking-[0.3em] text-xs uppercase mb-2 block">Welcome Message</span>
+                    <h2 class="text-4xl md:text-5xl font-serif text-gray-900 mb-6">Invitation</h2>
+                    <div class="w-24 h-1 bg-congress-red mx-auto"></div>
+                </div>
+                <div class="prose prose-lg mx-auto text-gray-600 font-sans leading-relaxed text-justify bg-white p-8 md:p-12 rounded-xl shadow-sm border border-gray-100">
+                    <p class="font-bold text-gray-800 text-xl mb-6">Dear Colleagues,</p>
+                    <p class="mb-6">It is our great pleasure to invite you to <span class="text-congress-red font-serif font-bold">Vita Cordis: The International Congress on Multidisciplinary Approaches to the Heart</span>, to be held in <strong>İzmir</strong>, with the aim of addressing multidisciplinary perspectives on cardiovascular health, sharing current scientific developments, and collaboratively shaping the future of healthcare.</p>
+                    <p class="mb-6">Taking place on <strong>May 9–10, 2026</strong>, Vita Cordis seeks to provide a comprehensive scientific platform that brings together diverse disciplines involved in cardiovascular care.</p>
+                    <div class="bg-congress-cream p-6 rounded-lg border-l-4 border-congress-red my-6">
+                        <p class="font-semibold text-gray-800 mb-2">The congress will focus on:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-sm md:text-base">
+                            <li>Clinical case discussions in light of current guidelines</li>
+                            <li>Multidisciplinary approaches to critical patient management</li>
+                            <li>Integration of next-generation diagnostic technologies</li>
+                            <li>Practical solutions for complex clinical scenarios</li>
+                        </ul>
+                    </div>
+                    <p class="mb-8">We believe that Vita Cordis will significantly contribute to your professional development, enrich your clinical perspective, and open new pathways for collaboration.</p>
+                    <div class="text-right mt-12 border-t border-gray-100 pt-6">
+                        <p class="font-serif text-lg text-gray-800 mb-2">Sincerely,</p>
+                        <p class="font-bold text-congress-red text-xl font-serif mt-4">Vita Cordis Organizing Committee</p>
+                        <p class="text-sm text-gray-500 uppercase tracking-widest mt-1">EMSA Dokuz Eylül</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 2: GENERAL INFORMATION ================= -->
+        <div id="general-info" class="page-section hidden-section py-12">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-serif text-congress-red mb-4">General Information</h2>
+                    <div class="w-24 h-1 bg-congress-red mx-auto"></div>
+                </div>
+                <div class="grid gap-6">
+                    <div class="info-card bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-16 h-16 rounded-full bg-congress-red text-white flex items-center justify-center flex-shrink-0 text-2xl"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-800 mb-2">Congress Venue</h3>
+                            <p class="text-gray-600">The congress will take place at the <strong>Founding Members Conference Hall (Kurucu Üyeler Konferans Salonu)</strong> at Dokuz Eylül University Faculty of Medicine in İzmir on May 9-10, 2026.</p>
+                        </div>
+                    </div>
+                    <div class="info-card bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-16 h-16 rounded-full bg-congress-red text-white flex items-center justify-center flex-shrink-0 text-2xl"><i class="fa-solid fa-language"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-800 mb-2">Congress Language</h3>
+                            <p class="text-gray-600">The official language of the congress is <strong>English</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="info-card bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-16 h-16 rounded-full bg-congress-red text-white flex items-center justify-center flex-shrink-0 text-2xl"><i class="fa-solid fa-id-badge"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-800 mb-2">Name Badges</h3>
+                            <p class="text-gray-600">All participants are required to wear their name badges at all times during the congress.</p>
+                        </div>
+                    </div>
+                    <div class="info-card bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-16 h-16 rounded-full bg-congress-red text-white flex items-center justify-center flex-shrink-0 text-2xl"><i class="fa-solid fa-certificate"></i></div>
+                        <div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-800 mb-2">Certificate of Participation</h3>
+                            <p class="text-gray-600">Participants who register and attend at least <strong>10 sessions</strong> will receive a Certificate of Participation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 3: ORGANIZATION COMMITTEE ================= -->
+        <div id="organization" class="page-section hidden-section py-12">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-serif text-congress-red mb-4">Organization Committee</h2>
+                    <div class="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
+                    <p class="text-gray-500 max-w-2xl mx-auto text-lg">Meet the dedicated team behind Vita Cordis.</p>
+                </div>
+                
+                <!-- Advisors -->
+                <div class="mb-20">
+                    <h3 class="text-2xl font-serif font-bold text-congress-gold mb-10 text-center uppercase tracking-widest">Congress Advisors</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                        
+                        <!-- Advisor 1 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
+                            <div class="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
+                                <i class="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
+                                <img src="ceren-sayarer.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Asst. Prof. Ceren SAYARER">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-1">Asst. Prof. Ceren SAYARER</h4>
+                            <p class="text-sm text-congress-red font-semibold">Congress Advisor</p>
+                        </div>
+                        
+                        <!-- Advisor 2 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
+                            <div class="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
+                                <i class="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
+                                <img src="tugra-gencpinar.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Prof. Dr. Tuğra GENÇPINAR">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-1">Prof. Dr. Tuğra GENÇPINAR</h4>
+                            <p class="text-sm text-congress-red font-semibold">Chief Physician, Dokuz Eylül University Hospital</p>
+                        </div>
+                        
+                        <!-- Advisor 3 -->
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
+                            <div class="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
+                                <i class="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
+                                <img src="serdar-bayrak.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Prof. Dr. Serdar BAYRAK">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900 mb-1">Prof. Dr. Serdar BAYRAK</h4>
+                            <p class="text-sm text-congress-red font-semibold">Dean, Dokuz Eylül University Faculty of Medicine</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Organizing Committee -->
+                <div>
+                    <h3 class="text-2xl font-serif font-bold text-congress-gold mb-10 text-center uppercase tracking-widest">Organizing Committee</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                        
+                        <!-- Organizer 1 -->
+                        <div class="text-center group">
+                            <div class="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition">
+                                <i class="fa-solid fa-user text-4xl text-gray-300 absolute z-0"></i>
+                                <img src="muge-sagim.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Gülsüm Müge Sağım">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900">Gülsüm Müge Sağım</h4>
+                            <p class="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p class="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">General Coordination</p>
+                        </div>
+
+                        <!-- Organizer 2 -->
+                        <div class="text-center group">
+                            <div class="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition">
+                                <i class="fa-solid fa-user text-4xl text-gray-300 absolute z-0"></i>
+                                <img src="sultan-hilal.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Sultan Hilal Solak">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900">Sultan Hilal Solak</h4>
+                            <p class="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p class="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Scientific Coordinator</p>
+                        </div>
+
+                        <!-- Organizer 3 -->
+                        <div class="text-center group">
+                            <div class="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition">
+                                <i class="fa-solid fa-user text-4xl text-gray-300 absolute z-0"></i>
+                                <img src="baran-demircan.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Tolgay Baran Demircan">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900">Tolgay Baran Demircan</h4>
+                            <p class="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p class="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Scientific Coordinator</p>
+                        </div>
+
+                        <!-- Organizer 4 -->
+                        <div class="text-center group">
+                            <div class="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition">
+                                <i class="fa-solid fa-user text-4xl text-gray-300 absolute z-0"></i>
+                                <img src="tunahan-ergurhan.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Tunahan Ergürhan">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900">Tunahan Ergürhan</h4>
+                            <p class="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p class="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Technical Coordinator</p>
+                        </div>
+
+                        <!-- Organizer 5 -->
+                        <div class="text-center group">
+                            <div class="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition">
+                                <i class="fa-solid fa-user text-4xl text-gray-300 absolute z-0"></i>
+                                <img src="beyza-bilir.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Beyza Bilge Bilir">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900">Beyza Bilge Bilir</h4>
+                            <p class="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p class="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Design Coordinator</p>
+                        </div>
+
+                        <!-- Organizer 6 -->
+                        <div class="text-center group">
+                            <div class="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition">
+                                <i class="fa-solid fa-user text-4xl text-gray-300 absolute z-0"></i>
+                                <img src="piraye-dundar.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Piraye Dündar">
+                            </div>
+                            <h4 class="text-lg font-bold text-gray-900">Piraye Dündar</h4>
+                            <p class="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                            <p class="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Finance Coordinator</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= PAGE 4: INVITED SPEAKERS ================= -->
+        <div id="speakers" class="page-section hidden-section py-12">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-serif text-congress-red mb-4">Invited Speakers</h2>
+                    <div class="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
+                    <p class="text-gray-500 max-w-2xl mx-auto text-lg">We are honored to host distinguished experts in cardiovascular health.</p>
+                </div>
+                
+                <div class="space-y-12">
+                    <!-- Speaker 1: Carlos A. Mestres -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div class="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div class="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center">
+                                <i class="fa-solid fa-user-tie text-6xl text-gray-300 absolute z-0"></i>
+                                <img src="carlos-mestres.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Prof. Dr. Carlos A. Mestres">
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Carlos A. Mestres</h3>
+                            <p class="text-congress-red font-semibold mt-2">Cardiovascular & Thoracic Surgeon</p>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <div class="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Prof. Dr. Carlos A. Mestres is an internationally renowned cardiovascular and thoracic surgeon whose career spans over four decades of clinical excellence, academic leadership, and global collaboration. Trained in Barcelona and holding both MD and PhD degrees, he has built a distinguished career across Europe, the Middle East, and Asia, contributing to some of the most advanced centres in cardiac surgery.</p>
+                                <p>He has held senior and leadership positions at institutions such as University Hospital Zürich and Cleveland Clinic Abu Dhabi, and currently serves as Extraordinary Professor of Cardiothoracic Surgery at the University of the Free State. Throughout his career, he has also been actively involved in postgraduate education, surgical training, and international academic programmes, shaping the next generation of cardiac surgeons.</p>
+                                <p>Prof. Mestres’ clinical and research interests focus on complex cardiac procedures, including valvular heart disease, aortic pathology, and infective endocarditis. His work integrates surgical innovation with a deep understanding of cardiovascular pathology, contributing to improved patient outcomes and advancing contemporary cardiac surgery.</p>
+                                <p>With an extensive portfolio of international lectures, scientific contributions, and collaborative projects, Prof. Dr. Mestres stands as a leading figure in global cardiovascular surgery. His participation in Vita Cordis 2026 offers a unique opportunity for attendees to gain insights from a surgeon whose career reflects both technical mastery and academic depth.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 2: Alberto Ortiz -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div class="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div class="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center">
+                                <i class="fa-solid fa-user-tie text-6xl text-gray-300 absolute z-0"></i>
+                                <!-- BURAYA TABLODAKİ İSİM YAZILDI -->
+                                <img src="alberto-ortiz.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Alberto Ortiz, MD, PhD">
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Alberto Ortiz</h3>
+                            <p class="text-congress-red font-semibold mt-2">Head of Nephrology & Hypertension</p>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <div class="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Alberto Ortiz, MD, PhD, FERA, is the Head of Nephrology and Hypertension at Fundación Jiménez Díaz and Professor of Medicine at Universidad Autónoma de Madrid. He serves as Renal Science Chair of the European Renal Association (ERA).</p>
+                                <p>Ortiz also coordinates Spain’s Kidney Research Network (REDINREN/RICORS2040) and SPACKDc, focusing on CKD genomics. He received the 2020 ERA Award for Research Excellence and co-chaired the KDIGO Controversies Conference on Kidney Health in 2023.</p>
+                                <p>His research focuses on CKD epidemiology, acute kidney injury, and CKD pathogenesis. He was Editor-in-Chief of Clinical Kidney Journal from 2014 to 2022.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 3: Mladen Milovanovic -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div class="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div class="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center">
+                                <i class="fa-solid fa-user-tie text-6xl text-gray-300 absolute z-0"></i>
+                                <img src="mladen-milovanovic.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Dr. Mladen Milovanovic">
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 leading-tight">Dr. Mladen Milovanovic</h3>
+                            <p class="text-congress-red font-semibold mt-2">Consultant Cardiologist</p>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <div class="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Dr. Mladen Milovanovic is a Consultant Cardiologist with specialist qualifications in Cardiology and Internal Medicine, currently practicing in Sweden. He has extensive clinical experience across multiple healthcare systems, including work within the National Health Service (UK) and the Swedish healthcare system. His practice spans both inpatient and outpatient cardiology, with particular focus on heart failure management, acute cardiology, and cardiovascular diagnostics.</p>
+                                <p>In addition to his clinical work, Dr. Milovanovic has a strong academic and strategic interest in healthcare innovation and system development. He studied Strategy and Innovation at Warwick Business School, University of Warwick (Coventry/London), where he was awarded distinction for his work on advanced care delivery models, including Hospital at Home.</p>
+                                <p>His professional interests include heart failure, cardiovascular imaging, and the development of patient-centred and sustainable models of care. He is particularly engaged in exploring how clinical practice can be enhanced through innovation, system design, and emerging technologies, including digital health and artificial intelligence.</p>
+                                <p>Dr. Milovanovic has contributed to international discussions on healthcare innovation and clinical practice, and is committed to bridging high-quality clinical care with forward-looking healthcare solutions. He is currently based in Stockholm, Sweden, and is actively involved in international clinical and professional collaborations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 4: Yasir Zaroug -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div class="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div class="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center">
+                                <i class="fa-solid fa-user-tie text-6xl text-gray-300 absolute z-0"></i>
+                                <img src="yasir-zaroug.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Professor Yasir Zaroug">
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 leading-tight">Professor Yasir Zaroug</h3>
+                            <p class="text-congress-red font-semibold mt-2">Diabetologist & Metabolic Medicine Researcher</p>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <div class="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Professor Zaroug is a distinguished Diabetologist, Metabolic Medicine Researcher, and Family Physician. He holds an IDF fellowship, a Master of Diabetes with Distinction from the University of Warwick, UK, a Master of Family Medicine, and a Postgraduate Award in Healthcare Administration, also from the University of Warwick, UK.</p>
+                                <p>He is also the founder of the CTC research hub center. Professor Zaroug has published numerous papers in the field and actively participates in international conferences, contributing significantly to the scientific community.</p>
+                                <p>His primary area of contribution lies in the management of cardiovascular risk through the primary prevention and control of Diabetes and obesity (Diabesity).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 5: Kutsal Baran Özkurt -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div class="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div class="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center">
+                                <i class="fa-solid fa-user-tie text-6xl text-gray-300 absolute z-0"></i>
+                                <img src="kutsal-baran.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Kutsal Baran Özkurt">
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 leading-tight">Kutsal Baran Özkurt</h3>
+                            <p class="text-congress-red font-semibold mt-2">Engineer, Scientist & Entrepreneur</p>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <div class="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                                <p>Kutsal Baran Özkurt is an engineer, scientist, and entrepreneur dedicated to advancing artificial intelligence in medicine. As the founder of Nexgene AI, he develops sophisticated artificial intelligence models with deep medical reasoning capabilities designed for use in clinical diagnosis and decision support processes.</p>
+                                <p>The AI solutions developed by his team are actively utilized by thousands of expert physicians at some of the world's premier healthcare and research institutions, including Harvard Medical School, MD Anderson Cancer Center, and Stanford Medicine.</p>
+                                <p>In addition to its national academic achievements at Teknofest, Nexgene AI has proven its success on a global scale by securing awards with its medical AI solutions in competitions hosted by internationally renowned organizations such as the MIT Media Lab, Nvidia, and StartX.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaker 6: Dr. Mehmet Kocabey -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                        <div class="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                            <div class="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center">
+                                <i class="fa-solid fa-user-tie text-6xl text-gray-300 absolute z-0"></i>
+                                <img src="mehmet-kocabey.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Dr. Mehmet Kocabey">
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-gray-900 leading-tight">Dr. Mehmet Kocabey</h3>
+                            <p class="text-congress-red font-semibold mt-2">Invited Speaker</p>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <div class="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed flex items-center h-full">
+                                <p class="italic text-gray-400">Biography will be announced soon.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 5: SCIENTIFIC PROGRAM ================= -->
+        <div id="program" class="page-section hidden-section py-12">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-serif text-congress-red mb-4">Scientific Program</h2>
+                    <div class="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
+                    <p class="text-gray-500 text-sm uppercase tracking-widest font-bold">Panels & Sessions</p>
+                </div>
+
+                <!-- Paneller Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Cardiology -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-heart-pulse text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Cardiology</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Heart Failure: Current Strategies & Emerging Approaches</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Cardiovascular Surgery & Emergency -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-kit-medical text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Cardiovascular Surgery & Emergency</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 1: Acute Cardiac Emergencies: Early Diagnosis and Stabilization</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 2: Surgical Strategies in Critical Cardiac Conditions</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Artificial Intelligence in Cardiology -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-microchip text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Artificial Intelligence in Cardiology</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 1: AI-Enabled Innovation in Cardiovascular Diagnostics</span></li>
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 2: Machine Learning and Future of Cardiac Care</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Nephrology (ÖZEL BÖBREK SVG İKONU) -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-7 h-7 fill-current">
+                                <path d="M298.6 38.3C241.5 5.5 162.7 10 114 62.7C53.7 127 34 218 46 305.5C58 392.3 106 468 178 514c22.8 14.5 50.1 15 73.1 .5c36.4-23.1 52.3-69.5 37.8-109.5c-7.7-21.2-22.3-39.2-43.1-51.1c-16-9.1-23.6-28.5-16.7-45.7c5.2-12.9 17.5-21.4 31.4-21.4c13.7 0 25.8 8.3 31.2 21c8.7 20.3 26 36.3 47.9 44.2c35.4 12.8 75.8 3.5 97.4-25.2c33.6-44.5 44-103.5 27.2-155.6C445.6 112 396.4 66.5 335.4 51.5c-12.4-3.1-24.8-4.3-36.8-13.2z"/>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Nephrology</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Cardiorenal Interactions: Hypertension, CKD and Heart Outcomes</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Neurology -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-brain text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Neurology</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Stroke and Cardiac Risk: Bridging the Gap</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Oncology -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-ribbon text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Oncology</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Cardiotoxicity in Cancer Therapy: From Bench to Bedside</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Genetics -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-dna text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Genetics</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Syndromic Heart Diseases: From Genes to Clinics</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Endocrinology -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-vial text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Endocrinology</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Diabetes and Chronic Disease: Protecting the Heart</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Environmental Impact -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-leaf text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Environmental Impact</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Air Pollution and Cardiovascular Risk: Evidence and Action</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Gynecology -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-venus text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Gynecology</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Women and Heart Diseases: Beyond Standard Paradigm</span></li>
+                        </ul>
+                    </div>
+
+                    <!-- Pediatric Cardiology -->
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i class="fa-solid fa-baby text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Pediatric Cardiology</h4>
+                        <ul class="text-sm text-gray-600 space-y-2">
+                            <li class="flex items-start gap-2"><i class="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Congenital Heart Diseases: From Diagnosis to Management</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 6: ABSTRACT SUBMISSION ================= -->
+        <div id="abstract" class="page-section hidden-section py-12">
+            <div class="container mx-auto px-6 max-w-6xl">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-serif text-congress-red mb-4">Abstract Submission</h2>
+                    <div class="w-24 h-1 bg-congress-red mx-auto mb-8"></div>
+                    <div class="inline-flex items-center gap-3 bg-red-50 text-congress-red border border-red-100 px-6 py-3 rounded-lg shadow-sm">
+                        <i class="fa-regular fa-clock text-xl"></i>
+                        <span class="font-bold uppercase tracking-wider">Deadline: <span class="text-black">24 April 2026</span></span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-serif text-gray-800 mb-4">General Rules</h3>
+                            <ul class="space-y-4 text-gray-600">
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-congress-gold mt-1"></i><span>Oral & Poster accepted.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-congress-gold mt-1"></i><span>Language: <strong>English</strong>.</span></li>
+                                <li class="flex items-start gap-3"><i class="fa-solid fa-check text-congress-gold mt-1"></i><span>Submission via <strong>e-mail only</strong>.</span></li>
+                            </ul>
+                        </div>
+                        <div class="mt-8">
+                            <a href="mailto:basharabdu2006@gmail.com" class="inline-flex items-center justify-center w-full bg-congress-red text-white px-6 py-3 rounded-xl hover:bg-congress-dark transition font-bold shadow-lg">
+                                <i class="fa-regular fa-paper-plane mr-2"></i> Submit Abstract via Email
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                        <h3 class="text-2xl font-serif text-gray-800 mb-4">Writing Guidelines</h3>
+                        <div class="space-y-4 text-sm text-gray-600">
+                            <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-congress-gold"><strong>Title:</strong> Concise, capitalize each word.</div>
+                            <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-congress-gold"><strong>Introduction (Aim):</strong> Purpose & importance.</div>
+                            <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-congress-gold"><strong>Results:</strong> Clear numerical findings.</div>
+                            <div class="p-3 bg-gray-50 rounded-lg border-l-4 border-congress-gold"><strong>Conclusion:</strong> Scientific contribution.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 7: SOCIAL EVENTS ================= -->
+        <div id="social" class="page-section hidden-section py-24">
+             <div class="container mx-auto px-6 text-center max-w-2xl">
+                <div class="w-24 h-24 bg-congress-red/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <i class="fa-solid fa-champagne-glasses text-4xl text-congress-red"></i>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-serif text-congress-red mb-6">Social Events</h2>
+                <div class="inline-block px-8 py-3 bg-white border border-congress-red text-congress-red rounded-full font-bold shadow-sm">
+                    Announcing Soon
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PAGE 8: REGISTRATION ================= -->
+        <div id="registration" class="page-section hidden-section py-12">
+             <div class="container mx-auto px-6 max-w-5xl">
+                
+                <!-- Accommodation Box -->
+                <div class="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden mb-12">
+                    <div class="p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center">
+                        <div class="w-full md:w-1/3 flex-shrink-0">
+                            <div class="aspect-square bg-gray-100 rounded-2xl overflow-hidden flex items-center justify-center border-4 border-congress-cream relative">
+                                <i class="fa-solid fa-hotel text-7xl text-gray-300 absolute z-0"></i>
+                                <img src="plaza-otel.jpg" class="speaker-img" onerror="this.setAttribute('data-error', 'true')" alt="Plaza Hotel">
+                            </div>
+                        </div>
+                        <div class="w-full md:w-2/3">
+                            <h3 class="text-3xl font-serif font-bold text-congress-red mb-4">Accommodation</h3>
+                            <div class="w-16 h-1 bg-congress-gold mb-6"></div>
+                            
+                            <div class="text-gray-600 space-y-4 text-justify">
+                                <p>Invited speakers will be accommodated at <strong>Plaza Hotel İzmir</strong>, located in the Balçova district of İzmir.</p>
+                                <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our speakers.</p>
+                                
+                                <div class="bg-red-50 p-4 rounded-xl border-l-4 border-congress-red mt-6 flex items-start gap-3">
+                                    <i class="fa-solid fa-circle-info text-congress-red mt-1"></i>
+                                    <span class="text-sm font-semibold text-gray-800">All accommodation arrangements for invited speakers will be organized by the congress committee.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Box -->
+                <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-12 text-center">
+                    <div class="w-20 h-20 bg-congress-red/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fa-solid fa-id-card text-3xl text-congress-red"></i>
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold text-congress-red mb-6">Registration</h3>
+                    <p class="text-gray-500 mb-8">Registration details and pricing will be announced shortly.</p>
+                    <div class="inline-block px-8 py-3 bg-congress-red text-white rounded-full font-bold shadow-sm">
+                        Opening Soon
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-congress-red text-white py-8 border-t border-white/10 mt-auto">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-6">
+            <div>
+                <h3 class="font-serif text-xl font-bold">Vita Cordis 2026</h3>
+                <p class="text-white/70 text-xs">International Congress on Multidisciplinary Approaches to the Heart</p>
+            </div>
+            <div class="text-sm space-y-2">
+                <p><i class="fa-solid fa-envelope mr-2 text-congress-gold"></i> dokuz-eylul@emsa-europe.eu</p>
+                <p><i class="fa-solid fa-phone mr-2 text-congress-gold"></i> +90 544 213 45 96</p>
+                <p><i class="fa-solid fa-location-dot mr-2 text-congress-gold"></i> İzmir, Türkiye</p>
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://www.instagram.com/emsadokuzeylulkongre?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="hover:text-congress-gold text-2xl transition"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.add('hidden-section');
+            });
+
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.remove('hidden-section');
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                link.classList.remove('font-bold');
+            });
+            
+            const activeLink = document.getElementById('nav-' + sectionId);
+            if (activeLink) {
+                activeLink.classList.add('active');
+                activeLink.classList.add('font-bold');
+            }
+
+            window.scrollTo(0, 0);
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('welcome');
+        });
+    </script>
+</body>
+</html>
+
+
+
