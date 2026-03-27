@@ -1086,38 +1086,142 @@ export default function Home() {
         {/* SCIENTIFIC PROGRAM */}
         {activeSection === "program" && (
           <div className="page-section py-12">
-            <div className="container mx-auto px-6 max-w-5xl">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Scientific Program</h2>
-                <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
-                <p className="text-gray-500 text-sm uppercase tracking-widest font-bold">Preliminary Schedule</p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transform transition duration-500 hover:scale-105">
-                  <div className="bg-congress-red text-white p-6 flex justify-between items-center">
-                    <h3 className="text-2xl font-serif font-bold">Day 1</h3>
-                    <span className="text-sm bg-white/20 px-3 py-1 rounded">May 9, 2026</span>
-                  </div>
-                  <div className="p-12 text-center flex flex-col items-center justify-center h-64 bg-gray-50">
-                    <i className="fa-solid fa-calendar-day text-5xl text-congress-gold mb-6 opacity-70"></i>
-                    <h4 className="font-bold text-gray-700 text-xl mb-2">Exciting Sessions Coming Soon</h4>
-                    <p className="text-sm text-gray-500">Stay tuned for the detailed schedule of our first day.</p>
-                  </div>
+            <div className="container mx-auto px-6 max-w-6xl">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Scientific Program</h2>
+                    <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
+                    <p className="text-gray-500 text-sm uppercase tracking-widest font-bold">Panels & Sessions</p>
                 </div>
 
-                <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden transform transition duration-500 hover:scale-105">
-                  <div className="bg-congress-gold text-white p-6 flex justify-between items-center">
-                    <h3 className="text-2xl font-serif font-bold text-congress-red">Day 2</h3>
-                    <span className="text-sm bg-congress-red/20 text-congress-red px-3 py-1 rounded font-bold">May 10, 2026</span>
-                  </div>
-                  <div className="p-12 text-center flex flex-col items-center justify-center h-64 bg-gray-50">
-                    <i className="fa-solid fa-calendar-check text-5xl text-congress-red mb-6 opacity-70"></i>
-                    <h4 className="font-bold text-gray-700 text-xl mb-2">Workshops & Panels Coming Soon</h4>
-                    <p className="text-sm text-gray-500">We are preparing an amazing closing day for you.</p>
-                  </div>
+                {/* Paneller Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    {/* Cardiology */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-heart-pulse text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Cardiology</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Heart Failure: Current Strategies & Emerging Approaches</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Cardiovascular Surgery & Emergency */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-kit-medical text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Cardiovascular Surgery & Emergency</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 1: Acute Cardiac Emergencies: Early Diagnosis and Stabilization</span></li>
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 2: Surgical Strategies in Critical Cardiac Conditions</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Artificial Intelligence in Cardiology */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-microchip text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Artificial Intelligence in Cardiology</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 1: AI-Enabled Innovation in Cardiovascular Diagnostics</span></li>
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 2: Machine Learning and Future of Cardiac Care</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Nephrology */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-7 h-7 fill-current">
+                                <path d="M298.6 38.3C241.5 5.5 162.7 10 114 62.7C53.7 127 34 218 46 305.5C58 392.3 106 468 178 514c22.8 14.5 50.1 15 73.1 .5c36.4-23.1 52.3-69.5 37.8-109.5c-7.7-21.2-22.3-39.2-43.1-51.1c-16-9.1-23.6-28.5-16.7-45.7c5.2-12.9 17.5-21.4 31.4-21.4c13.7 0 25.8 8.3 31.2 21c8.7 20.3 26 36.3 47.9 44.2c35.4 12.8 75.8 3.5 97.4-25.2c33.6-44.5 44-103.5 27.2-155.6C445.6 112 396.4 66.5 335.4 51.5c-12.4-3.1-24.8-4.3-36.8-13.2z"/>
+                            </svg>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Nephrology</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Cardiorenal Interactions: Hypertension, CKD and Heart Outcomes</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Neurology */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-brain text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Neurology</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Stroke and Cardiac Risk: Bridging the Gap</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Oncology */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-ribbon text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Oncology</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Cardiotoxicity in Cancer Therapy: From Bench to Bedside</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Genetics */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-dna text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Genetics</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Syndromic Heart Diseases: From Genes to Clinics</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Endocrinology */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-vial text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Endocrinology</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Diabetes and Chronic Disease: Protecting the Heart</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Environmental Impact */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-leaf text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Environmental Impact</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Air Pollution and Cardiovascular Risk: Evidence and Action</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Gynecology */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-venus text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Gynecology</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Women and Heart Diseases: Beyond Standard Paradigm</span></li>
+                        </ul>
+                    </div>
+
+                    {/* Pediatric Cardiology */}
+                    <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                        <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                            <i className="fa-solid fa-baby text-2xl"></i>
+                        </div>
+                        <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Pediatric Cardiology</h4>
+                        <ul className="text-sm text-gray-600 space-y-2">
+                            <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Congenital Heart Diseases: From Diagnosis to Management</span></li>
+                        </ul>
+                    </div>
+
                 </div>
-              </div>
             </div>
           </div>
         )}
