@@ -1,0 +1,204 @@
+﻿
+> vita-cordis-admin@1.0.0 build
+> next build
+
+node.exe : ÔÜá Warning: Next.
+js inferred your workspace ro
+ot, but it may not be correct
+.
+At line:1 char:1
++ & "C:\Program Files\nodejs/
+node.exe" "C:\Program Files\n
+odejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (ÔÜá War  
+  ning: Ne...not be correc   
+ t.:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+ We detected multiple lockfil
+es and selected the directory
+ of C:\Users\ernal\package-lo
+ck.json as the root directory
+.
+ To silence this warning, set
+ `turbopack.root` in your Nex
+t.js config, or consider remo
+ving one of the lockfiles if 
+it's not needed.
+   See https://nextjs.org/doc
+s/app/api-reference/config/ne
+xt-config-js/turbopack#root-d
+irectory for more information
+.
+ Detected additional lockfile
+s: 
+   * C:\Users\ernal\.gemini\a
+ntigravity\scratch\vita-cordi
+s-admin\package-lock.json
+
+Ôû▓ Next.js 16.2.1 (Turbopack)
+
+ÔÜá The "middleware" file con
+vention is deprecated. Please
+ use "proxy" instead. Learn m
+ore: https://nextjs.org/docs/
+messages/middleware-to-proxy
+  Creating an optimized production build ...
+Error: Cannot apply unknown u
+tility class `font-sans`. Are
+ you using CSS modules or sim
+ilar and missing `@reference`
+? https://tailwindcss.com/doc
+s/functions-and-directives#re
+ference-directive
+    [2m[at onInvalidCandidat
+e (C:\Users\ernal\.gemini\ant
+igravity\scratch\vita-cordis-
+admin\node_modules\tailwindcs
+s\dist\lib.js:21:1314)][0m
+    [2m[at Ee (C:\Users\erna
+l\.gemini\antigravity\scratch
+\vita-cordis-admin\node_modul
+es\tailwindcss\dist\lib.js:16
+:37066)][0m
+    [2m[at C:\Users\ernal\.g
+emini\antigravity\scratch\vit
+a-cordis-admin\node_modules\t
+ailwindcss\dist\lib.js:21:355
+][0m
+    [2m[at _r (C:\Users\erna
+l\.gemini\antigravity\scratch
+\vita-cordis-admin\node_modul
+es\tailwindcss\dist\lib.js:3:
+1733)][0m
+    [2m[at I (C:\Users\ernal
+\.gemini\antigravity\scratch\
+vita-cordis-admin\node_module
+s\tailwindcss\dist\lib.js:3:1
+377)][0m
+    [2m[at Te (C:\Users\erna
+l\.gemini\antigravity\scratch
+\vita-cordis-admin\node_modul
+es\tailwindcss\dist\lib.js:21
+:172)][0m
+    [2m[at mn (C:\Users\erna
+l\.gemini\antigravity\scratch
+\vita-cordis-admin\node_modul
+es\tailwindcss\dist\lib.js:38
+:294)][0m
+    [2m[at process.processTi
+cksAndRejections (node:intern
+al/process/task_queues:103:5)
+][0m
+    [2m[at async gn (C:\User
+s\ernal\.gemini\antigravity\s
+cratch\vita-cordis-admin\node
+_modules\tailwindcss\dist\lib
+.js:38:631)][0m
+    [2m[at async Xr (C:\User
+s\ernal\.gemini\antigravity\s
+cratch\vita-cordis-admin\node
+_modules\@tailwindcss\node\di
+st\index.js:10:3416)][0m
+
+> Build error occurred
+Error: Turbopack build failed
+ with 1 errors:
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/global
+s.css
+Error evaluating Node.js code
+CssSyntaxError: tailwindcss: 
+C:\Users\ernal\.gemini\antigr
+avity\scratch\vita-cordis-adm
+in\app\globals.css:1:1: Canno
+t apply unknown utility class
+ `font-sans`. Are you using C
+SS modules or similar and mis
+sing `@reference`? https://ta
+ilwindcss.com/docs/functions-
+and-directives#reference-dire
+ctive
+    at Input.error (.gemini/a
+ntigravity/scratch/vita-cordi
+s-admin/node_modules/postcss/
+lib/input.js:135:16) [C:\User
+s\ernal\.gemini\antigravity\s
+cratch\vita-cordis-admin\.nex
+t\build\chunks\0q.7_0e9tzd9._
+.js:4651:22]
+    at error (.gemini/antigra
+vity/scratch/vita-cordis-admi
+n/node_modules/postcss/lib/no
+de.js:146:32) [C:\Users\ernal
+\.gemini\antigravity\scratch\
+vita-cordis-admin\.next\build
+\chunks\0q.7_0e9tzd9._.js:928
+:38]
+    [at Object.Once (C:\Users
+\ernal\.gemini\antigravity\sc
+ratch\vita-cordis-admin\node_
+modules\@tailwindcss\postcss\
+dist\index.js:10:6913)]
+    [at process.processTicksA
+ndRejections (node:internal/p
+rocess/task_queues:103:5)]
+    at async LazyResult.runAs
+ync (.gemini/antigravity/scra
+tch/vita-cordis-admin/node_mo
+dules/postcss/lib/lazy-result
+.js:293:11) [C:\Users\ernal\.
+gemini\antigravity\scratch\vi
+ta-cordis-admin\.next\build\c
+hunks\0q.7_0e9tzd9._.js:6214:
+21]
+    at async transform (turbo
+pack:///[turbopack-node]/tran
+sforms/postcss.ts:70:34) [C:\
+Users\ernal\.gemini\antigravi
+ty\scratch\vita-cordis-admin\
+.next\build\chunks\[root-of-t
+he-server]__0849ws5._.js:172:
+36]
+    at async run (turbopack:/
+//[turbopack-node]/child_proc
+ess/evaluate.ts:89:23) [C:\Us
+ers\ernal\.gemini\antigravity
+\scratch\vita-cordis-admin\.n
+ext\build\chunks\[root-of-the
+-server]__0mj-ms9._.js:443:31
+]
+
+Import trace:
+  Client Component Browser:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/gl
+obals.css [Client Component B
+rowser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/la
+yout.tsx [Server Component]
+
+
+    at async transform (turbo
+pack:///[turbopack-node]/tran
+sforms/postcss.ts:70:34) [C:\
+Users\ernal\.gemini\antigravi
+ty\scratch\vita-cordis-admin\
+.next\build\chunks\[root-of-t
+he-server]__0849ws5._.js:172:
+36])
+    at async run (turbopack:/
+//[turbopack-node]/child_proc
+ess/evaluate.ts:89:23) [C:\Us
+ers\ernal\.gemini\antigravity
+\scratch\vita-cordis-admin\.n
+ext\build\chunks\[root-of-the
+-server]__0mj-ms9._.js:443:31
+])

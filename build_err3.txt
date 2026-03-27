@@ -1,0 +1,110 @@
+﻿
+> vita-cordis-admin@1.0.0 build
+> next build
+
+ÔÜá Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of C:\Users\ernal\package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * C:\Users\ernal\.gemini\antigravity\scratch\vita-cordis-admin\package-lock.json
+System.Management.Automation.RemoteException
+Ôû▓ Next.js 16.2.1 (Turbopack)
+
+ÔÜá The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+System.Management.Automation.RemoteException
+> Build error occurred
+Error: Turbopack build failed with 13 errors:
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/mime-types/README.md
+Unknown module type
+This module doesn't have an associated type. Use a known file extension, or register a loader for it.
+System.Management.Automation.RemoteException
+Read more: https://nextjs.org/docs/app/api-reference/next-config-js/turbo#webpack-loaders
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/react/README.md
+Unknown module type
+This module doesn't have an associated type. Use a known file extension, or register a loader for it.
+System.Management.Automation.RemoteException
+Read more: https://nextjs.org/docs/app/api-reference/next-config-js/turbo#webpack-loaders
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/mime-types/application/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/mime-types/audio/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/mime-types/dist/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/mime-types/image/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/mime-types/text/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/mime-types/video/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/react/dist/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/react/dist/use-uploadthing-BnX8QvFV.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/react/native/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/react/next-ssr-plugin/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+./.gemini/antigravity/scratch/vita-cordis-admin/node_modules/@uploadthing/shared/dist/index.d.cts
+Specified module format (CommonJs) is not matching the module format of the source code (EcmaScript Modules)
+The CommonJs module format was specified in the package.json that is affecting this source file or by using an special extension, but Ecmascript import/export syntax is used in the source code.
+The module was automatically converted to an EcmaScript module, but that is in conflict with the specified module format. Either change the "type" field in the package.json or replace EcmaScript import/export syntax with CommonJs syntas in the source file.
+In some cases EcmaScript import/export syntax is added by an transform and isn't actually part of the source code. In these cases revisit transformation options to inject the correct syntax.
+System.Management.Automation.RemoteException
+System.Management.Automation.RemoteException
+    at ignore-listed frames

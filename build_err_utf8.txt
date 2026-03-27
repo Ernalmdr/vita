@@ -1,0 +1,1057 @@
+﻿
+> vita-cordis-admin@1.0.0 build
+> next build
+
+node.exe : ÔÜá Warning: Next.
+js inferred your workspace ro
+ot, but it may not be correct
+.
+At line:1 char:1
++ & "C:\Program Files\nodejs/
+node.exe" "C:\Program Files\n
+odejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (ÔÜá War  
+  ning: Ne...not be correc   
+ t.:String) [], RemoteExc    
+eption
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+ We detected multiple lockfil
+es and selected the directory
+ of C:\Users\ernal\package-lo
+ck.json as the root directory
+.
+ To silence this warning, set
+ `turbopack.root` in your Nex
+t.js config, or consider remo
+ving one of the lockfiles if 
+it's not needed.
+   See https://nextjs.org/doc
+s/app/api-reference/config/ne
+xt-config-js/turbopack#root-d
+irectory for more information
+.
+ Detected additional lockfile
+s: 
+   * C:\Users\ernal\.gemini\a
+ntigravity\scratch\vita-cordi
+s-admin\package-lock.json
+
+Ôû▓ Next.js 16.2.1 (Turbopack)
+
+ÔÜá The "middleware" file con
+vention is deprecated. Please
+ use "proxy" instead. Learn m
+ore: https://nextjs.org/docs/
+messages/middleware-to-proxy
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed
+ with 23 errors:
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/global
+s.css
+Error evaluating Node.js code
+Error: It looks like you're t
+rying to use `tailwindcss` di
+rectly as a PostCSS plugin. T
+he PostCSS plugin has moved t
+o a separate package, so to c
+ontinue using Tailwind CSS wi
+th PostCSS you'll need to ins
+tall `@tailwindcss/postcss` a
+nd update your PostCSS config
+uration.
+    [at at (C:\Users\ernal\.g
+emini\antigravity\scratch\vit
+a-cordis-admin\node_modules\t
+ailwindcss\dist\lib.js:38:164
+3)]
+    at pluginFactory (turbopa
+ck:///[turbopack-node]/transf
+orms/postcss.ts:56:14) [C:\Us
+ers\ernal\.gemini\antigravity
+\scratch\vita-cordis-admin\.n
+ext\build\chunks\[root-of-the
+-server]__0849ws5._.js:165:20
+]
+    [at <anonymous>]
+    at map (turbopack:///[tur
+bopack-node]/transforms/postc
+ss.ts:43:33) [C:\Users\ernal\
+.gemini\antigravity\scratch\v
+ita-cordis-admin\.next\build\
+chunks\[root-of-the-server]__
+0849ws5._.js:155:35]
+    at init (turbopack:///[tu
+rbopack-node]/child_process/e
+valuate.ts:74:20) [C:\Users\e
+rnal\.gemini\antigravity\scra
+tch\vita-cordis-admin\.next\b
+uild\chunks\[root-of-the-serv
+er]__0mj-ms9._.js:429:26]
+    [at process.processTicksA
+ndRejections (node:internal/p
+rocess/task_queues:103:5)]
+
+Import trace:
+  Client Component Browser:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/gl
+obals.css [Client Component B
+rowser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/la
+yout.tsx [Server Component]
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/.next-inte
+rnal/server/app/admin/login/p
+age/actions.js
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/.next-inte
+rnal/server/app/admin/page/ac
+tions.js
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/.next-inte
+rnal/server/app/page/actions.
+js
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/action
+s/auth.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import trace:
+  Server Component:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/auth.ts
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/layout.tsx
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/action
+s/data:15588e
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import traces:
+  Client Component Browser:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/data:15588e [Client Com
+ponent Browser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/compon
+ents/admin/registration-table
+.tsx [Client Component Browse
+r]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/compon
+ents/admin/registration-table
+.tsx [Server Component]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/page.tsx [Server Componen
+t]
+
+  Client Component SSR:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/data:15588e [Client Com
+ponent SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/compon
+ents/admin/registration-table
+.tsx [Client Component SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/compon
+ents/admin/registration-table
+.tsx [Server Component]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/page.tsx [Server Componen
+t]
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/action
+s/data:2671ea
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import traces:
+  Client Component Browser:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/data:2671ea [Client Com
+ponent Browser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/login/page.tsx [Client Co
+mponent Browser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/login/page.tsx [Server Co
+mponent]
+
+  Client Component SSR:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/data:2671ea [Client Com
+ponent SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/login/page.tsx [Client Co
+mponent SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/login/page.tsx [Server Co
+mponent]
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/action
+s/data:df6a32
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import traces:
+  Client Component Browser:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/data:df6a32 [Client Com
+ponent Browser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Client Component Brow
+ser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Server Component]
+
+  Client Component SSR:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/data:df6a32 [Client Com
+ponent SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Client Component SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Server Component]
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/action
+s/registration.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/action
+s/submit-registration.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/admin/
+layout.tsx
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/admin/
+login/page.tsx
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import traces:
+  Client Component Browser:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/login/page.tsx [Client Co
+mponent Browser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/login/page.tsx [Server Co
+mponent]
+
+  Client Component SSR:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/login/page.tsx [Client Co
+mponent SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/login/page.tsx [Server Co
+mponent]
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/admin/
+page.tsx
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/api/up
+loadthing/core.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import trace:
+  App Route:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ap
+i/uploadthing/core.ts
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ap
+i/uploadthing/route.ts
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/api/up
+loadthing/route.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/layout
+.tsx
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/app/page.t
+sx
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import traces:
+  Client Component Browser:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Client Component Brow
+ser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Server Component]
+
+  Client Component SSR:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Client Component SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Server Component]
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/components
+/admin/registration-table.tsx
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import trace:
+  Server Component:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/compon
+ents/admin/registration-table
+.tsx
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/page.tsx
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/middleware
+.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/tailwind.c
+onfig.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/utils/supa
+base/middleware.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import trace:
+  Edge Middleware:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/utils/
+supabase/middleware.ts
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/middle
+ware.ts
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/utils/supa
+base/server.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import traces:
+  #1 [Server Component]:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/utils/
+supabase/server.ts
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/submit-registration.ts
+
+  #2 [Server Component]:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/utils/
+supabase/server.ts
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ac
+tions/auth.ts
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/ad
+min/layout.tsx
+
+
+./.gemini/antigravity/scratch
+/vita-cordis-admin/utils/uplo
+adthing.ts
+Specified module format (Comm
+onJs) is not matching the mod
+ule format of the source code
+ (EcmaScript Modules)
+The CommonJs module format wa
+s specified in the package.js
+on that is affecting this sou
+rce file or by using an speci
+al extension, but Ecmascript 
+import/export syntax is used 
+in the source code.
+The module was automatically 
+converted to an EcmaScript mo
+dule, but that is in conflict
+ with the specified module fo
+rmat. Either change the "type
+" field in the package.json o
+r replace EcmaScript import/e
+xport syntax with CommonJs sy
+ntas in the source file.
+In some cases EcmaScript impo
+rt/export syntax is added by 
+an transform and isn't actual
+ly part of the source code. I
+n these cases revisit transfo
+rmation options to inject the
+ correct syntax.
+
+Import traces:
+  Client Component Browser:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/utils/
+uploadthing.ts [Client Compon
+ent Browser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Client Component Brow
+ser]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Server Component]
+
+  Client Component SSR:
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/utils/
+uploadthing.ts [Client Compon
+ent SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Client Component SSR]
+    ./.gemini/antigravity/scr
+atch/vita-cordis-admin/app/pa
+ge.tsx [Server Component]
+
+
+    at pluginFactory (turbopa
+ck:///[turbopack-node]/transf
+orms/postcss.ts:56:14) [C:\Us
+ers\ernal\.gemini\antigravity
+\scratch\vita-cordis-admin\.n
+ext\build\chunks\[root-of-the
+-server]__0849ws5._.js:165:20
+])
+    at map (turbopack:///[tur
+bopack-node]/transforms/postc
+ss.ts:43:33) [C:\Users\ernal\
+.gemini\antigravity\scratch\v
+ita-cordis-admin\.next\build\
+chunks\[root-of-the-server]__
+0849ws5._.js:155:35])
+    at init (turbopack:///[tu
+rbopack-node]/child_process/e
+valuate.ts:74:20) [C:\Users\e
+rnal\.gemini\antigravity\scra
+tch\vita-cordis-admin\.next\b
+uild\chunks\[root-of-the-serv
+er]__0mj-ms9._.js:429:26])
