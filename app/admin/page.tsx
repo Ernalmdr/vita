@@ -1,53 +1,31 @@
 import RegistrationTable from '@/components/admin/registration-table';
+import { createClient } from '@/utils/supabase/server';
 import { FileText, CheckCircle, Clock } from 'lucide-react';
 
-// Mock data to simulate Prisma fetch
-// In a real application, you would fetch from DB:
-// import prisma from '@/lib/prisma';
-// const registrations = await prisma.registration.findMany({ orderBy: { createdAt: 'desc' } });
-const mockRegistrations = [
-  {
-    id: '1',
-    fullName: 'Dr. John Doe',
-    email: 'john.doe@example.com',
-    phone: '+1 234 567 890',
-    receiptUrl: 'https://example.com/receipt1.pdf',
-    status: 'Pending',
-    createdAt: new Date('2026-03-25T10:00:00Z'),
-  },
-  {
-    id: '2',
-    fullName: 'Dr. Jane Smith',
-    email: 'jane.smith@example.com',
-    phone: '+1 987 654 321',
-    receiptUrl: 'https://example.com/receipt2.pdf',
-    status: 'Approved',
-    createdAt: new Date('2026-03-24T14:30:00Z'),
-  },
-  {
-    id: '3',
-    fullName: 'Prof. Michael Brown',
-    email: 'mbrown@university.edu',
-    phone: '+44 123 456 789',
-    receiptUrl: 'https://example.com/receipt3.pdf',
-    status: 'Rejected',
-    createdAt: new Date('2026-03-23T09:15:00Z'),
-  }
-];
+export const dynamic = 'force-dynamic';
 
 export default async function AdminDashboard() {
-  // Mocking the database fetch
-  const registrations = mockRegistrations;
-  
-  const total = registrations.length;
-  const pending = registrations.filter(r => r.status === 'Pending').length;
-  const approved = registrations.filter(r => r.status === 'Approved').length;
+  const supabase = await createClient();
+
+  const { data: registrations, error } = await supabase
+    .from('registrations')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Failed to fetch registrations:', error);
+  }
+
+  const data = registrations ?? [];
+  const total    = data.length;
+  const pending  = data.filter(r => r.status === 'Pending').length;
+  const approved = data.filter(r => r.status === 'Approved').length;
 
   return (
     <div className="max-w-7xl mx-auto space-y-8">
       <div>
         <h2 className="font-serif text-3xl font-bold text-congress-dark">Dashboard Overview</h2>
-        <p className="text-gray-500 mt-2 font-sans">Manage participants and verify payment receipts.</p>
+        <p className="text-gray-500 mt-2 font-sans">Manage participants and verify registrations.</p>
       </div>
 
       {/* Stats Cards */}
@@ -61,7 +39,7 @@ export default async function AdminDashboard() {
             <p className="text-2xl font-bold text-congress-dark">{total}</p>
           </div>
         </div>
-        
+
         <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm flex items-center space-x-4">
           <div className="p-3 bg-amber-50 text-amber-600 rounded-lg">
             <Clock size={24} />
@@ -86,10 +64,13 @@ export default async function AdminDashboard() {
       {/* Main Table Section */}
       <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
         <div className="p-6 border-b border-gray-100 flex justify-between items-center bg-white">
-          <h3 className="font-serif text-xl font-bold text-congress-dark">Recent Registrations</h3>
+          <div>
+            <h3 className="font-serif text-xl font-bold text-congress-dark">Registrations</h3>
+            <p className="text-xs text-gray-400 mt-0.5">Click a row to expand full details</p>
+          </div>
         </div>
         <div className="p-0">
-          <RegistrationTable initialData={registrations} />
+          <RegistrationTable initialData={data} />
         </div>
       </div>
     </div>
