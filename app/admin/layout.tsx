@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { LayoutDashboard, Users, Settings, LogOut } from 'lucide-react';
 import { signOut } from '@/app/actions/auth';
 
@@ -7,8 +8,16 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     <div className="min-h-screen bg-congress-cream flex flex-col md:flex-row font-sans">
       {/* Sidebar */}
       <aside className="w-full md:w-64 bg-congress-red text-white flex flex-col shadow-xl md:min-h-screen">
-        <div className="p-6 text-center md:text-left border-b border-white/10">
-          <h1 className="font-serif text-2xl font-bold tracking-wider text-congress-gold">Vita Cordis</h1>
+        <div className="p-6 text-center md:text-left border-b border-white/10 flex flex-col items-center md:items-start">
+          <div className="relative w-24 h-24 mb-3 bg-white rounded-full p-2">
+            <Image 
+              src="/logo.jpg" 
+              alt="Vita Cordis Logo" 
+              fill
+              className="object-contain rounded-full"
+            />
+          </div>
+          <h1 className="font-serif text-xl font-bold tracking-wider text-congress-gold">Vita Cordis</h1>
           <p className="text-sm opacity-80 mt-1 uppercase tracking-widest text-congress-cream">Admin Panel</p>
         </div>
         

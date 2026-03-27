@@ -4,6 +4,7 @@ import { useActionState } from 'react'
 import { useFormStatus } from 'react-dom'
 import { login } from '@/app/actions/auth'
 import { Lock, Mail, Loader2, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 // Wrap submit button to use pending state 
 function SubmitButton() {
@@ -45,12 +46,17 @@ export default function LoginPage() {
 
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden relative z-10">
         
-        {/* Header section with brand colors */}
-        <div className="bg-congress-red p-8 text-center text-white relative">
-          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
-          <h1 className="font-serif text-3xl font-bold tracking-wider text-congress-gold relative z-10">
-            Vita Cordis
-          </h1>
+        {/* Header section with brand colors and logo */}
+        <div className="bg-congress-cream p-6 text-center border-b border-gray-100 flex flex-col items-center justify-center relative">
+          <div className="relative w-32 h-32 mb-4">
+            <Image 
+              src="/logo.jpg" 
+              alt="Vita Cordis Logo" 
+              fill
+              className="object-contain drop-shadow-sm rounded-full"
+              priority
+            />
+          </div>
           <p className="text-sm text-congress-cream/80 uppercase tracking-widest mt-2 relative z-10">
             Secure Admin Portal
           </p>
