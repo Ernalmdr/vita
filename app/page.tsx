@@ -448,7 +448,7 @@ function RegistrationWizard() {
                   <label className="block text-sm font-bold text-gray-700">Passport Photo *</label>
                   {!passportUrl ? (
                     <UploadDropzone
-                      endpoint="receiptPdfUploader"
+                      endpoint="passportUploader"
                       appearance={{
                         container: 'border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 py-4 min-h-0',
                         uploadIcon: 'w-8 h-8 text-gray-400',
@@ -489,7 +489,7 @@ function RegistrationWizard() {
               </p>
               {!receiptUrl ? (
                 <UploadDropzone
-                  endpoint="receiptPdfUploader"
+                  endpoint="receiptUploader"
                   appearance={{
                     container: 'border-2 border-dashed border-gray-300 rounded-xl bg-gray-50 py-4 min-h-0',
                     uploadIcon: 'w-8 h-8 text-gray-400',
