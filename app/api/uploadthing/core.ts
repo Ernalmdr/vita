@@ -7,13 +7,16 @@ export const ourFileRouter = {
     image: { maxFileSize: "4MB", maxFileCount: 1 },
     pdf: { maxFileSize: "4MB", maxFileCount: 1 } 
   }).onUploadComplete(async ({ file }) => {
-    console.log("Passport upload complete:", file.url);
+    // BURASI DEĞİŞTİ: file.url yerine file.ufsUrl kullanıyoruz
+    console.log("Passport upload complete:", file.ufsUrl);
   }),
+  
   receiptUploader: f({ 
     image: { maxFileSize: "4MB", maxFileCount: 1 },
     pdf: { maxFileSize: "4MB", maxFileCount: 1 } 
   }).onUploadComplete(async ({ file }) => {
-    console.log("Receipt upload complete:", file.url);
+    // BURASI DEĞİŞTİ: file.url yerine file.ufsUrl kullanıyoruz
+    console.log("Receipt upload complete:", file.ufsUrl);
   }),
 } satisfies FileRouter;
 
