@@ -55,7 +55,7 @@ export default async function AdminDashboard() {
             <CheckCircle size={24} />
           </div>
           <div>
-            <p className="text-sm text-gray-500 font-medium">Apd</p>
+            <p className="text-sm text-gray-500 font-medium">Approved</p>
             <p className="text-2xl font-bold text-congress-dark">{approved}</p>
           </div>
         </div>

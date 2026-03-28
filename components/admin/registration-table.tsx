@@ -1,8 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, X, Eye, Globe, User } from 'lucide-react';
+import { Check, X, Eye, Globe, User, Search } from 'lucide-react';
 import { updateRegistrationStatus } from '@/app/actions/registration';
+import React from 'react';
 
 type Registration = {
   id: string;
@@ -43,6 +44,21 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
   const [data, setData] = useState<Registration[]>(initialData);
   const [loadingId, setLoadingId] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredData = data.filter((reg) => {
+    // Arama yaparken büyük/küçük harf duyarlılığını ortadan kaldırmak için hepsini küçük harfe çeviriyoruz
+    const searchLower = searchTerm.toLowerCase();
+
+    // İsim, e-posta, telefon, kimlik no veya okul içinde arama yapıyoruz
+    return (
+      reg.full_name?.toLowerCase().includes(searchLower) ||
+      reg.email?.toLowerCase().includes(searchLower) ||
+      reg.phone?.toLowerCase().includes(searchLower) ||
+      reg.personal_id?.toLowerCase().includes(searchLower) ||
+      reg.school?.toLowerCase().includes(searchLower)
+    );
+  });
 
   const handleStatusUpdate = async (id: string, newStatus: string) => {
     setLoadingId(id);
@@ -73,126 +89,166 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
   };
 
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full text-left text-sm whitespace-nowrap">
-        <thead className="bg-gray-50/50 text-gray-600 font-sans border-b border-gray-100">
-          <tr>
-            <th className="px-6 py-4 font-medium">Participant</th>
-            <th className="px-6 py-4 font-medium">Type / Role</th>
-            <th className="px-6 py-4 font-medium">Accommodation</th>
-            <th className="px-6 py-4 font-medium">Fee</th>
-            <th className="px-6 py-4 font-medium">Status</th>
-            <th className="px-6 py-4 font-medium">Date</th>
-            <th className="px-6 py-4 font-medium text-right">Actions</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-gray-100 font-sans text-gray-700">
-          {data.map((reg) => (
-            <>
-              <tr
-                key={reg.id}
-                className="hover:bg-gray-50/50 transition-colors cursor-pointer"
-                onClick={() => setExpandedId(expandedId === reg.id ? null : reg.id)}
-              >
-                <td className="px-6 py-4">
-                  <p className="font-semibold text-congress-dark">{reg.full_name}</p>
-                  <p className="text-xs text-gray-500 mt-0.5">{reg.email}</p>
-                  <p className="text-xs text-gray-400">{reg.phone}</p>
-                </td>
-                <td className="px-6 py-4">
-                  <div className="flex items-center gap-1.5 mb-1">
-                    {reg.origin === 'international' ? (
-                      <Globe size={12} className="text-blue-500" />
-                    ) : (
-                      <User size={12} className="text-gray-500" />
-                    )}
-                    <span className={`text-xs font-semibold ${reg.origin === 'international' ? 'text-blue-600' : 'text-gray-600'}`}>
-                      {reg.origin === 'international' ? 'International' : 'Local'}
-                    </span>
-                  </div>
-                  <span className="text-xs text-gray-500">{ROLE_LABELS[reg.role ?? ''] ?? reg.role ?? '—'}</span>
-                </td>
-                <td className="px-6 py-4 text-xs text-gray-600">
-                  {ACCOM_LABELS[reg.accommodation ?? ''] ?? '—'}
-                  {reg.room_size && reg.accommodation !== 'none' && (
-                    <p className="text-gray-400">{reg.room_size}-person</p>
-                  )}
-                </td>
-                <td className="px-6 py-4">
-                  {reg.price ? (
-                    <span className="font-bold text-congress-dark">
-                      {reg.currency === 'EUR' ? '€' : '₺'}{reg.price}
-                    </span>
-                  ) : '—'}
-                </td>
-                <td className="px-6 py-4">{getStatusBadge(reg.status)}</td>
-                <td className="px-6 py-4 text-gray-500 text-xs">
-                  {new Date(reg.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                </td>
-                <td className="px-6 py-4 text-right space-x-2" onClick={e => e.stopPropagation()}>
-                  {reg.status === 'Pending' && (
-                    <>
-                      <button
-                        onClick={() => handleStatusUpdate(reg.id, 'Approved')}
-                        disabled={loadingId === reg.id}
-                        className="inline-flex items-center space-x-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-md transition-colors disabled:opacity-50"
-                      >
-                        <Check size={14} /><span>Approve</span>
-                      </button>
-                      <button
-                        onClick={() => handleStatusUpdate(reg.id, 'Rejected')}
-                        disabled={loadingId === reg.id}
-                        className="inline-flex items-center space-x-1 px-3 py-1.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 text-xs font-semibold rounded-md transition-colors disabled:opacity-50"
-                      >
-                        <X size={14} /><span>Reject</span>
-                      </button>
-                    </>
-                  )}
-                  {reg.status !== 'Pending' && (
-                    <span className="text-gray-400 italic text-xs">Handled</span>
-                  )}
-                </td>
-              </tr>
+    <div className="space-y-4">
+      {/* Arama Kutusu (Search Bar) */}
+      <div className="px-6 pt-4">
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search size={18} className="text-gray-400" />
+          </div>
+          <input
+            type="text"
+            placeholder="İsim, e-posta, telefon, TC/Pasaport No veya okul ara..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="block w-full md:w-1/2 pl-10 pr-3 py-2 border border-gray-200 rounded-lg leading-5 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-congress-dark focus:border-congress-dark sm:text-sm transition-colors"
+          />
+        </div>
+      </div>
 
-              {/* Expanded detail row */}
-              {expandedId === reg.id && (
-                <tr key={`${reg.id}-detail`} className="bg-gray-50 border-b border-gray-100">
-                  <td colSpan={7} className="px-6 py-4">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
-                      <div><span className="text-gray-400 block">School</span><span className="font-medium">{reg.school ?? '—'}</span></div>
-                      <div><span className="text-gray-400 block">Personal ID</span><span className="font-medium font-mono">{reg.personal_id ?? '—'}</span></div>
-                      <div><span className="text-gray-400 block">Date of Birth</span><span className="font-medium">{reg.birth_date ?? '—'}</span></div>
-                      <div><span className="text-gray-400 block">Roommate ID</span><span className="font-medium font-mono">{reg.roommate_id ?? '—'}</span></div>
-                      {reg.origin === 'international' && (
-                        <>
-                          <div><span className="text-gray-400 block">Country</span><span className="font-medium">{reg.country ?? '—'}</span></div>
-                          <div><span className="text-gray-400 block">Passport Photo</span>
-                            {reg.passport_photo_url
-                              ? <a href={reg.passport_photo_url} target="_blank" rel="noopener noreferrer" className="text-congress-red hover:underline inline-flex items-center gap-1"><Eye size={12} /> View</a>
-                              : <span className="font-medium">—</span>}
-                          </div>
-                        </>
+      <div className="overflow-x-auto">
+        <table className="w-full text-left text-sm whitespace-nowrap">
+          <thead className="bg-gray-50/50 text-gray-600 font-sans border-b border-gray-100">
+            <tr>
+              <th className="px-6 py-4 font-medium">Participant</th>
+              <th className="px-6 py-4 font-medium">Type / Role</th>
+              <th className="px-6 py-4 font-medium">Accommodation</th>
+              <th className="px-6 py-4 font-medium">Fee</th>
+              <th className="px-6 py-4 font-medium">Status</th>
+              <th className="px-6 py-4 font-medium">Date</th>
+              <th className="px-6 py-4 font-medium text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100 font-sans text-gray-700">
+            {/* ÖNEMLİ: data.map yerine filteredData.map kullanıyoruz */}
+            {filteredData.map((reg) => (
+              <React.Fragment key={reg.id}>
+                <tr
+                  className="hover:bg-gray-50/50 transition-colors cursor-pointer"
+                  onClick={() => setExpandedId(expandedId === reg.id ? null : reg.id)}
+                >
+                  <td className="px-6 py-4">
+                    <p className="font-semibold text-congress-dark">{reg.full_name}</p>
+                    <p className="text-xs text-gray-500 mt-0.5">{reg.email}</p>
+                    <p className="text-xs text-gray-400">{reg.phone}</p>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      {reg.origin === 'international' ? (
+                        <Globe size={12} className="text-blue-500" />
+                      ) : (
+                        <User size={12} className="text-gray-500" />
                       )}
-                      <div><span className="text-gray-400 block">Payment Receipt</span>
-                        {reg.receipt_url
-                          ? <a href={reg.receipt_url} target="_blank" rel="noopener noreferrer" className="text-congress-red hover:underline inline-flex items-center gap-1"><Eye size={12} /> View</a>
-                          : <span className="font-medium text-amber-600">Not uploaded</span>}
-                      </div>
+                      <span className={`text-xs font-semibold ${reg.origin === 'international' ? 'text-blue-600' : 'text-gray-600'}`}>
+                        {reg.origin === 'international' ? 'International' : 'Local'}
+                      </span>
                     </div>
+                    <span className="text-xs text-gray-500">{ROLE_LABELS[reg.role ?? ''] ?? reg.role ?? '—'}</span>
+                  </td>
+                  <td className="px-6 py-4 text-xs text-gray-600">
+                    {ACCOM_LABELS[reg.accommodation ?? ''] ?? '—'}
+                    {reg.room_size && reg.accommodation !== 'none' && (
+                      <p className="text-gray-400">{reg.room_size}-person</p>
+                    )}
+                  </td>
+                  <td className="px-6 py-4">
+                    {reg.price ? (
+                      <span className="font-bold text-congress-dark">
+                        {reg.currency === 'EUR' ? '€' : '₺'}{reg.price}
+                      </span>
+                    ) : '—'}
+                  </td>
+                  <td className="px-6 py-4">{getStatusBadge(reg.status)}</td>
+                  <td className="px-6 py-4 text-gray-500 text-xs">
+                    {new Date(reg.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                  </td>
+                  <td className="px-6 py-4 text-right space-x-2" onClick={e => e.stopPropagation()}>
+                    {reg.status === 'Pending' && (
+                      <>
+                        <button
+                          onClick={() => handleStatusUpdate(reg.id, 'Approved')}
+                          disabled={loadingId === reg.id}
+                          className="inline-flex items-center space-x-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-md transition-colors disabled:opacity-50"
+                        >
+                          <Check size={14} /><span>Approve</span>
+                        </button>
+                        <button
+                          onClick={() => handleStatusUpdate(reg.id, 'Rejected')}
+                          disabled={loadingId === reg.id}
+                          className="inline-flex items-center space-x-1 px-3 py-1.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 text-xs font-semibold rounded-md transition-colors disabled:opacity-50"
+                        >
+                          <X size={14} /><span>Reject</span>
+                        </button>
+                      </>
+                    )}
+                    {reg.status !== 'Pending' && (
+                      <span className="text-gray-400 italic text-xs">Handled</span>
+                    )}
                   </td>
                 </tr>
-              )}
-            </>
-          ))}
-          {data.length === 0 && (
-            <tr>
-              <td colSpan={7} className="px-6 py-12 text-center text-gray-500">
-                No registrations found.
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+
+                {/* Expanded detail row */}
+                {expandedId === reg.id && (
+                  <tr key={`${reg.id}-detail`} className="bg-gray-50 border-b border-gray-100">
+                    <td colSpan={7} className="px-6 py-4">
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+                        <div><span className="text-gray-400 block">School</span><span className="font-medium">{reg.school ?? '—'}</span></div>
+                        <div><span className="text-gray-400 block">Personal ID</span><span className="font-medium font-mono">{reg.personal_id ?? '—'}</span></div>
+                        <div><span className="text-gray-400 block">Date of Birth</span><span className="font-medium">{reg.birth_date ?? '—'}</span></div>
+                        <div>
+                          <span className="text-gray-400 block">Roommate ID</span>
+                          {/* Oda arkadaşı verisi yine TÜM data içinden aranıyor, böylece arama yapılsa bile eşleşme bozulmuyor */}
+                          {reg.roommate_id ? (
+                            <span className="block mt-1">
+                              <span className="font-medium font-mono block mb-1">{reg.roommate_id}</span>
+                              {data.find(r => r.personal_id === reg.roommate_id)?.full_name ? (
+                                <span className="text-blue-600 font-semibold inline-flex items-center gap-1">
+                                  <User size={12} />
+                                  {data.find(r => r.personal_id === reg.roommate_id)?.full_name}
+                                </span>
+                              ) : (
+                                <span className="text-amber-600 font-medium italic">
+                                  (Sisteme henüz kayıtlı değil)
+                                </span>
+                              )}
+                            </span>
+                          ) : (
+                            <span className="font-medium font-mono">—</span>
+                          )}
+                        </div>
+                        {reg.origin === 'international' && (
+                          <>
+                            <div><span className="text-gray-400 block">Country</span><span className="font-medium">{reg.country ?? '—'}</span></div>
+                            <div><span className="text-gray-400 block">Passport Photo</span>
+                              {reg.passport_photo_url
+                                ? <a href={reg.passport_photo_url} target="_blank" rel="noopener noreferrer" className="text-congress-red hover:underline inline-flex items-center gap-1"><Eye size={12} /> View</a>
+                                : <span className="font-medium">—</span>}
+                            </div>
+                          </>
+                        )}
+                        <div><span className="text-gray-400 block">Payment Receipt</span>
+                          {reg.receipt_url
+                            ? <a href={reg.receipt_url} target="_blank" rel="noopener noreferrer" className="text-congress-red hover:underline inline-flex items-center gap-1"><Eye size={12} /> View</a>
+                            : <span className="font-medium text-amber-600">Not uploaded</span>}
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                )}
+              </React.Fragment>
+            ))}
+
+            {/* ÖNEMLİ: data.length yerine filteredData.length kullanıyoruz */}
+            {filteredData.length === 0 && (
+              <tr>
+                <td colSpan={7} className="px-6 py-12 text-center text-gray-500">
+                  {searchTerm ? 'Arama kriterlerinize uygun kayıt bulunamadı.' : 'No registrations found.'}
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
