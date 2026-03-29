@@ -1304,10 +1304,7 @@ export default function Home() {
                       <p>Invited speakers will be accommodated at <strong>Plaza Hotel İzmir</strong>, located in the Balçova district of İzmir.</p>
                       <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our speakers.</p>
                       
-                      <div className="bg-emerald-50 p-4 rounded-xl border-l-4 border-emerald-500 mt-6 flex items-start gap-3">
-                        <i className="fa-solid fa-circle-info text-emerald-600 mt-1"></i>
-                        <span className="text-sm font-semibold text-gray-800">All accommodation arrangements for invited speakers will be organized by the congress committee.</span>
-                      </div>
+
                     </div>
                   </div>
                 </div>
