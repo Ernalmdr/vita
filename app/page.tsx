@@ -11,14 +11,14 @@ type AccomKey = "none" | "room1" | "room2" | "room3";
 
 const PRICES: Record<Origin, Record<Role, Record<AccomKey, number>>> = {
   local: {
-    specialist: { none: 500, room1: 1200, room2: 950, room3: 800 },
-    physician: { none: 400, room1: 1100, room2: 850, room3: 700 },
-    med_student: { none: 250, room1: 900, room2: 700, room3: 600 },
+    specialist:  { none: 1250, room1: 3800, room2: 2500, room3: 2500 }, // Base (750/3300/2000) + 500 TL
+    physician:   { none: 1000, room1: 3550, room2: 2250, room3: 2250 }, // Base + 250 TL
+    med_student: { none: 750,  room1: 3300, room2: 2000, room3: 2000 }, // Base + 0
   },
   international: {
-    specialist: { none: 80, room1: 180, room2: 140, room3: 120 },
-    physician: { none: 60, room1: 160, room2: 120, room3: 100 },
-    med_student: { none: 40, room1: 130, room2: 100, room3: 80 },
+    specialist:  { none: 25, room1: 75, room2: 50, room3: 50 }, // Base (15/65/40) + 10 €
+    physician:   { none: 20, room1: 70, room2: 45, room3: 45 }, // Base + 5 €
+    med_student: { none: 15, room1: 65, room2: 40, room3: 40 }, // Base + 0
   },
 };
 
@@ -293,8 +293,8 @@ function RegistrationWizard() {
               {isLocal ? (
                 <>
                   <p><span className="text-gray-500">Banka:</span> <strong>Ziraat Bankası</strong></p>
-                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR00 0000 0000 0000 0000 0000 00</strong></p>
-                  <p><span className="text-gray-500">Hesap Sahibi:</span> <strong>Vita Cordis</strong></p>
+                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR 5400 0100 1554 7757 5050 5015</strong></p>
+                  <p><span className="text-gray-500">Hesap Sahibi:</span> <strong>Piraye Dündar</strong></p>
                   <p className="bg-white border border-congress-red/10 rounded-lg px-3 py-2 mt-3 text-gray-600 text-xs">
                     📌 Açıklamaya: <span className="font-bold text-congress-red">[Ad Soyad] – Vita Cordis 2026</span> yazınız
                   </p>
@@ -302,8 +302,8 @@ function RegistrationWizard() {
               ) : (
                 <>
                   <p><span className="text-gray-500">Bank:</span> <strong>Ziraat Bankası</strong></p>
-                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR00 0000 0000 0000 0000 0000 00</strong></p>
-                  <p><span className="text-gray-500">Account Holder:</span> <strong>EMSA Dokuz Eylül</strong></p>
+                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR 1100 0100 1554 7757 5050 5013</strong></p>
+                  <p><span className="text-gray-500">Account Holder:</span> <strong>Piraye Dündar</strong></p>
                   <p className="bg-white border border-congress-red/10 rounded-lg px-3 py-2 mt-3 text-gray-600 text-xs">
                     📌 Description: <span className="font-bold text-congress-red">[Full Name] – Vita Cordis 2026</span>
                   </p>
