@@ -683,8 +683,8 @@ export default function Home() {
           <div className="md:hidden flex justify-between items-center py-4">
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => showSection("welcome")}>
               {/* Mobile Logo */}
-              <div className="h-10 w-10 rounded-full overflow-hidden bg-white border border-white/20 flex-shrink-0">
-                <img src="/logo.jpg" className="h-full w-full object-contain" alt="Vita Cordis Logo" />
+              <div className="h-10 flex items-center justify-center flex-shrink-0">
+                <img src="/logo.jpg" className="h-full w-auto object-contain" alt="Vita Cordis Logo" />
               </div>
               <span className="font-serif text-xl">Vita Cordis</span>
             </div>
@@ -697,8 +697,8 @@ export default function Home() {
           <div className="hidden md:flex flex-wrap justify-between items-center py-4 text-center text-sm lg:text-base leading-tight font-serif font-light">
             {/* Logo */}
             <div className="flex items-center gap-3 cursor-pointer mr-2 flex-shrink-0" onClick={() => showSection("welcome")}>
-              <div className="h-12 w-12 rounded-full overflow-hidden bg-white border border-white/20 shadow-md">
-                <img src="/logo.jpg" className="h-full w-full object-contain" alt="Vita Cordis Logo" />
+              <div className="h-12 flex items-center justify-center">
+                <img src="/logo.jpg" className="h-full w-auto object-contain drop-shadow-sm" alt="Vita Cordis Logo" />
               </div>
             </div>
 
@@ -740,8 +740,8 @@ export default function Home() {
             <header className="hero-bg relative min-h-[50vh] flex items-center justify-center text-white overflow-hidden mb-12">
               <div className="container mx-auto px-6 text-center relative z-10 py-10">
                 <div className="mb-8 flex justify-center">
-                  <div className="w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-white/20 shadow-2xl overflow-hidden bg-white flex items-center justify-center">
-                    <img src="/logo.jpg" className="w-full h-full object-contain" alt="Vita Cordis Logo" />
+                  <div className="h-48 md:h-64 flex items-center justify-center">
+                    <img src="/logo.jpg" className="h-full w-auto object-contain drop-shadow-2xl" alt="Vita Cordis Logo" />
                   </div>
                 </div>
                 <h1 className="text-5xl md:text-8xl font-bold mb-4 font-serif tracking-tight drop-shadow-lg">Vita Cordis</h1>
