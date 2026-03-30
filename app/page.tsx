@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { submitRegistration } from "@/app/actions/submit-registration";
@@ -1072,6 +1072,63 @@ export default function Home() {
                   </div>
                 </div>
 
+                {/* Köksal Alptekin */}
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                  <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                    <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                      <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                      <img src="/koksal-alptekin.jpg" className="speaker-img" alt="Prof. Köksal Alptekin" />
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Köksal Alptekin, M.D.</h3>
+                    <p className="text-congress-red font-semibold mt-2">Professor of Psychiatry</p>
+                  </div>
+                  <div className="w-full md:w-2/3">
+                    <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                      <p>Prof. Köksal Alptekin has been practicing as a professor at the Department of Psychiatry of the University of Dokuz Eylül, İzmir-Turkey since 2002. He had residency training in Psychiatry at the same department and has been trained in Psychodrama and Psychoanalytically Oriented Group Psychotherapy.</p>
+                      <p>Besides many national professional organizations, he is a Schizophrenia and Epidemiology Section member of the European Psychiatric Association (EPA). He has participated in the task force of WPA for schizophrenia since 2005, and is one of the editors of "Schizophrenia Treatment Guideline" and "Schizophrenia" published by the Schizophrenia Section of the Turkish Psychiatric Association.</p>
+                      <p>Dr. Alptekin's main research focus and publications include psychopharmacological treatment of schizophrenia, epidemiology of schizophrenia and risk factors for psychosis, and virtual reality techniques to stop smoking and improve psychosocial functioning in schizophrenia patients. His H-index is 31.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Oktay Halit Aktepe */}
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                  <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                    <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                      <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                      <img src="/oktay-aktepe.jpg" className="speaker-img" alt="Assoc. Prof. Oktay Halit Aktepe" />
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Assoc. Prof. Oktay Halit Aktepe</h3>
+                    <p className="text-congress-red font-semibold mt-2">Medical Oncologist</p>
+                  </div>
+                  <div className="w-full md:w-2/3">
+                    <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                      <p>Assoc. Prof. Oktay Halit Aktepe is a medical oncologist at Dokuz Eylül University with a strong focus on translational and clinical oncology. He graduated from Hacettepe University Faculty of Medicine and completed his specialization in Internal Medicine, followed by further academic training, building a career that bridges clinical practice with research.</p>
+                      <p>His work centers on prognostic biomarkers, cancer immunotherapy, and treatment outcomes, particularly in metastatic cancers such as renal cell carcinoma and melanoma. Through his research, he has contributed to identifying clinically relevant markers that help predict survival and guide treatment decisions in real-world oncology settings.</p>
+                      <p>With an active publication record in international journals and involvement in contemporary oncological research, Assoc. Prof. Aktepe brings an evidence-based and clinically oriented perspective to cancer care. In addition to his research and clinical work, he continues his academic role in training future physicians in the field of oncology.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tarık Kıvrak */}
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                  <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                    <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                      <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                      <img src="/tarik-kivrak.jpg" className="speaker-img" alt="Prof. Dr. Tarık Kıvrak" />
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Tarık Kıvrak</h3>
+                    <p className="text-congress-red font-semibold mt-2">Cardiologist & AI Researcher</p>
+                  </div>
+                  <div className="w-full md:w-2/3">
+                    <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                      <p>Prof. Dr. Tarık Kıvrak is a cardiologist and academic at Fırat University Faculty of Medicine, where he is actively involved in both clinical practice and research. His work focuses on key areas of cardiovascular medicine, including heart failure and pulmonary hypertension, while also exploring the evolving role of emerging technologies in cardiology.</p>
+                      <p>His work increasingly focuses on the integration of artificial intelligence into cardiovascular medicine. He has contributed extensively to the scientific literature, with numerous publications and collaborative research efforts exploring both traditional clinical cardiology and innovative, data-driven approaches.</p>
+                      <p>Prof. Dr. Kıvrak's research reflects a multidisciplinary perspective, combining clinical cardiology with advanced analytical and computational methods. His recent work highlights the use of artificial intelligence in areas such as pulmonary hypertension detection and cardiovascular risk assessment, aiming to improve diagnostic accuracy and patient outcomes in real-world settings.</p>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -1087,132 +1144,129 @@ export default function Home() {
                 <p className="text-gray-500 text-sm uppercase tracking-widest font-bold">Panels & Sessions</p>
               </div>
 
-              {/* Paneller Grid */}
+              {/* Panels Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                {/* Cardiology */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                {/* Environmental Health */}
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
                   <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
-                    <i className="fa-solid fa-heart-pulse text-2xl"></i>
+                    <i className="fa-solid fa-leaf text-2xl"></i>
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Cardiology</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Heart Failure: Current Strategies & Emerging Approaches</span></li>
-                  </ul>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Environmental Health</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;What surrounds us may outlive us.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Artur Badyda</footer>
+                  </blockquote>
                 </div>
 
-                {/* Cardiovascular Surgery & Emergency */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                {/* Psychiatry */}
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
                   <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
-                    <i className="fa-solid fa-kit-medical text-2xl"></i>
+                    <i className="fa-solid fa-brain text-2xl"></i>
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Cardiovascular Surgery & Emergency</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 1: Acute Cardiac Emergencies: Early Diagnosis and Stabilization</span></li>
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 2: Surgical Strategies in Critical Cardiac Conditions</span></li>
-                  </ul>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Psychiatry</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;Mind suffers. Heart pays.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Köksal Alptekin</footer>
+                  </blockquote>
                 </div>
 
-                {/* Artificial Intelligence in Cardiology */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                {/* Artificial Intelligence */}
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
                   <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
                     <i className="fa-solid fa-microchip text-2xl"></i>
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Artificial Intelligence in Cardiology</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 1: AI-Enabled Innovation in Cardiovascular Diagnostics</span></li>
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Session 2: Machine Learning and Future of Cardiac Care</span></li>
-                  </ul>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Artificial Intelligence</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;Would you trust it if it was right?&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Tarık Kıvrak &amp; Prof. Dr. Kutsal Özkurt</footer>
+                  </blockquote>
+                </div>
+
+                {/* Genetics */}
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
+                  <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                    <i className="fa-solid fa-dna text-2xl"></i>
+                  </div>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Genetics</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The ending was written. We just arrived late.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Mehmet Kocabey</footer>
+                  </blockquote>
                 </div>
 
                 {/* Nephrology */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
                   <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-7 h-7 fill-current">
                       <path d="M298.6 38.3C241.5 5.5 162.7 10 114 62.7C53.7 127 34 218 46 305.5C58 392.3 106 468 178 514c22.8 14.5 50.1 15 73.1 .5c36.4-23.1 52.3-69.5 37.8-109.5c-7.7-21.2-22.3-39.2-43.1-51.1c-16-9.1-23.6-28.5-16.7-45.7c5.2-12.9 17.5-21.4 31.4-21.4c13.7 0 25.8 8.3 31.2 21c8.7 20.3 26 36.3 47.9 44.2c35.4 12.8 75.8 3.5 97.4-25.2c33.6-44.5 44-103.5 27.2-155.6C445.6 112 396.4 66.5 335.4 51.5c-12.4-3.1-24.8-4.3-36.8-13.2z" />
                     </svg>
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Nephrology</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Cardiorenal Interactions: Hypertension, CKD and Heart Outcomes</span></li>
-                  </ul>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Nephrology</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;When one goes down, the other follows.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Indranil Dasgupta &amp; Prof. Dr. Alberto Ortiz</footer>
+                  </blockquote>
                 </div>
 
-                {/* Neurology */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                {/* Cardiovascular Surgery */}
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
                   <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
-                    <i className="fa-solid fa-brain text-2xl"></i>
+                    <i className="fa-solid fa-kit-medical text-2xl"></i>
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Neurology</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Stroke and Cardiac Risk: Bridging the Gap</span></li>
-                  </ul>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Cardiovascular Surgery</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The heart remembers what we cut.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Carlos Mestres</footer>
+                  </blockquote>
+                </div>
+
+                {/* Cardiology */}
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
+                  <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                    <i className="fa-solid fa-heart-pulse text-2xl"></i>
+                  </div>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Cardiology</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The beat returns—but not the past.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Mladen Milovanovic</footer>
+                  </blockquote>
+                </div>
+
+                {/* Emergency Medicine */}
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
+                  <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
+                    <i className="fa-solid fa-truck-medical text-2xl"></i>
+                  </div>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Emergency Medicine</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;Seconds decide what minutes can&rsquo;t fix.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Doç. Dr. Birkan Korgan</footer>
+                  </blockquote>
                 </div>
 
                 {/* Oncology */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
                   <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
                     <i className="fa-solid fa-ribbon text-2xl"></i>
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Oncology</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Cardiotoxicity in Cancer Therapy: From Bench to Bedside</span></li>
-                  </ul>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Oncology</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The cure demands a price.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Doç. Dr. Oktay Halit Aktepe</footer>
+                  </blockquote>
                 </div>
 
-                {/* Genetics */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                  <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
-                    <i className="fa-solid fa-dna text-2xl"></i>
-                  </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Genetics</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Syndromic Heart Diseases: From Genes to Clinics</span></li>
-                  </ul>
-                </div>
-
-                {/* Endocrinology */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
+                {/* Metabolism */}
+                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
                   <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
                     <i className="fa-solid fa-vial text-2xl"></i>
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Endocrinology</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Diabetes and Chronic Disease: Protecting the Heart</span></li>
-                  </ul>
-                </div>
-
-                {/* Environmental Impact */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                  <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
-                    <i className="fa-solid fa-leaf text-2xl"></i>
-                  </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Environmental Impact</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Air Pollution and Cardiovascular Risk: Evidence and Action</span></li>
-                  </ul>
-                </div>
-
-                {/* Gynecology */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                  <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
-                    <i className="fa-solid fa-venus text-2xl"></i>
-                  </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Gynecology</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Women and Heart Diseases: Beyond Standard Paradigm</span></li>
-                  </ul>
-                </div>
-
-                {/* Pediatric Cardiology */}
-                <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition">
-                  <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
-                    <i className="fa-solid fa-baby text-2xl"></i>
-                  </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-3 border-b border-gray-100 pb-2">Pediatric Cardiology</h4>
-                  <ul className="text-sm text-gray-600 space-y-2">
-                    <li className="flex items-start gap-2"><i className="fa-solid fa-caret-right text-congress-gold mt-1"></i> <span>Congenital Heart Diseases: From Diagnosis to Management</span></li>
-                  </ul>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Metabolism</h4>
+                  <blockquote className="flex-1 flex flex-col justify-between">
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The system whispers before it fails.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Dr. Yasir Zaroug</footer>
+                  </blockquote>
                 </div>
 
               </div>
