@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import { submitRegistration } from "@/app/actions/submit-registration";
@@ -684,7 +684,7 @@ export default function Home() {
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => showSection("welcome")}>
               {/* Mobile Logo */}
               <div className="h-10 w-10 rounded-full overflow-hidden bg-white border border-white/20 flex-shrink-0">
-                <img src="/logo.jpg" className="h-full w-full object-cover scale-[1.06]" alt="Vita Cordis Logo" />
+                <img src="/logo.jpg" className="h-full w-full object-contain" alt="Vita Cordis Logo" />
               </div>
               <span className="font-serif text-xl">Vita Cordis</span>
             </div>
@@ -698,7 +698,7 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center gap-3 cursor-pointer mr-2 flex-shrink-0" onClick={() => showSection("welcome")}>
               <div className="h-12 w-12 rounded-full overflow-hidden bg-white border border-white/20 shadow-md">
-                <img src="/logo.jpg" className="h-full w-full object-cover scale-[1.06]" alt="Vita Cordis Logo" />
+                <img src="/logo.jpg" className="h-full w-full object-contain" alt="Vita Cordis Logo" />
               </div>
             </div>
 
@@ -741,7 +741,7 @@ export default function Home() {
               <div className="container mx-auto px-6 text-center relative z-10 py-10">
                 <div className="mb-8 flex justify-center">
                   <div className="w-64 h-64 md:w-72 md:h-72 rounded-full border-4 border-white/20 shadow-2xl overflow-hidden bg-white flex items-center justify-center">
-                    <img src="/logo.jpg" className="w-full h-full object-cover scale-[1.06]" alt="Vita Cordis Logo" />
+                    <img src="/logo.jpg" className="w-full h-full object-contain" alt="Vita Cordis Logo" />
                   </div>
                 </div>
                 <h1 className="text-5xl md:text-8xl font-bold mb-4 font-serif tracking-tight drop-shadow-lg">Vita Cordis</h1>
