@@ -449,8 +449,9 @@ function RegistrationWizard() {
                         uploadIcon: 'w-8 h-8 text-gray-400',
                         label: 'text-xs text-gray-500',
                         allowedContent: 'text-[10px] text-gray-400',
-                        button: 'text-xs px-4 py-1.5 h-auto mt-1 bg-congress-red hover:bg-congress-dark rounded-lg',
+                        button: 'pointer-events-none text-xs px-4 py-1.5 h-auto mt-1 bg-congress-red hover:bg-congress-dark rounded-lg',
                       }}
+                      config={{ mode: "auto" }}
                       onClientUploadComplete={(res) => {
                         if (res && res.length > 0) setPassportUrl(res[0].url);
                       }}
@@ -490,8 +491,9 @@ function RegistrationWizard() {
                     uploadIcon: 'w-8 h-8 text-gray-400',
                     label: 'text-xs text-gray-500',
                     allowedContent: 'text-[10px] text-gray-400',
-                    button: 'text-xs px-4 py-1.5 h-auto mt-1 bg-congress-red hover:bg-congress-dark rounded-lg',
+                    button: 'pointer-events-none text-xs px-4 py-1.5 h-auto mt-1 bg-congress-red hover:bg-congress-dark rounded-lg',
                   }}
+                  config={{ mode: "auto" }}
                   onClientUploadComplete={(res) => {
                     if (res && res.length > 0) setReceiptUrl(res[0].url);
                   }}
