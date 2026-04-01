@@ -46,18 +46,28 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
 
+  const [statusFilter, setStatusFilter] = useState('All');
+  const [roleFilter, setRoleFilter] = useState('All');
+  const [accomFilter, setAccomFilter] = useState('All');
+
   const filteredData = data.filter((reg) => {
     // Arama yaparken büyük/küçük harf duyarlılığını ortadan kaldırmak için hepsini küçük harfe çeviriyoruz
     const searchLower = searchTerm.toLowerCase();
 
     // İsim, e-posta, telefon, kimlik no veya okul içinde arama yapıyoruz
-    return (
+    const matchesSearch = 
       reg.full_name?.toLowerCase().includes(searchLower) ||
       reg.email?.toLowerCase().includes(searchLower) ||
       reg.phone?.toLowerCase().includes(searchLower) ||
       reg.personal_id?.toLowerCase().includes(searchLower) ||
-      reg.school?.toLowerCase().includes(searchLower)
-    );
+      reg.school?.toLowerCase().includes(searchLower);
+
+    // Filtreleri uyguluyoruz
+    const matchesStatus = statusFilter === 'All' || reg.status === statusFilter;
+    const matchesRole = roleFilter === 'All' || reg.role === roleFilter;
+    const matchesAccom = accomFilter === 'All' || reg.accommodation === accomFilter;
+
+    return matchesSearch && matchesStatus && matchesRole && matchesAccom;
   });
 
   const handleStatusUpdate = async (id: string, newStatus: string) => {
@@ -108,9 +118,9 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
 
   return (
     <div className="space-y-4">
-      {/* Arama Kutusu (Search Bar) */}
-      <div className="px-6 pt-4">
-        <div className="relative">
+      {/* Arama Kutusu ve Filtreler (Search & Filters) */}
+      <div className="px-6 pt-4 flex flex-col lg:flex-row gap-4">
+        <div className="relative flex-1">
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
             <Search size={18} className="text-gray-400" />
           </div>
@@ -119,8 +129,45 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
             placeholder="İsim, e-posta, telefon, TC/Pasaport No veya okul ara..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="block w-full md:w-1/2 pl-10 pr-3 py-2 border border-gray-200 rounded-lg leading-5 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-congress-dark focus:border-congress-dark sm:text-sm transition-colors"
+            className="block w-full pl-10 pr-3 py-2 border border-gray-200 rounded-lg leading-5 bg-gray-50 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-congress-dark focus:border-congress-dark sm:text-sm transition-colors"
           />
+        </div>
+
+        {/* Dropdown Filtreler */}
+        <div className="flex flex-wrap gap-2">
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+            className="border border-gray-200 rounded-lg px-3 py-2 bg-gray-50 text-sm focus:outline-none focus:ring-1 focus:ring-congress-dark text-gray-700 font-medium cursor-pointer"
+          >
+            <option value="All">Tüm Durumlar</option>
+            <option value="Pending">Bekliyor</option>
+            <option value="Approved">Onaylandı</option>
+            <option value="Rejected">Reddedildi</option>
+          </select>
+
+          <select
+            value={roleFilter}
+            onChange={(e) => setRoleFilter(e.target.value)}
+            className="border border-gray-200 rounded-lg px-3 py-2 bg-gray-50 text-sm focus:outline-none focus:ring-1 focus:ring-congress-dark text-gray-700 font-medium cursor-pointer"
+          >
+            <option value="All">Tüm Roller</option>
+            <option value="specialist">Specialist</option>
+            <option value="physician">Physician</option>
+            <option value="med_student">Med Student</option>
+          </select>
+
+          <select
+            value={accomFilter}
+            onChange={(e) => setAccomFilter(e.target.value)}
+            className="border border-gray-200 rounded-lg px-3 py-2 bg-gray-50 text-sm focus:outline-none focus:ring-1 focus:ring-congress-dark text-gray-700 font-medium cursor-pointer"
+          >
+            <option value="All">Tüm Seçimler</option>
+            <option value="none">Konaklamasız</option>
+            <option value="room1">1 Kişilik Oda</option>
+            <option value="room2">2 Kişilik Oda</option>
+            <option value="room3">3 Kişilik Oda</option>
+          </select>
         </div>
       </div>
 
