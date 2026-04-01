@@ -986,7 +986,7 @@ export default function Home() {
                       <img src="/alberto-ortiz.jpg" className="speaker-img" alt="Prof. Dr. Alberto Ortiz" />
                     </div>
                     <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Alberto Ortiz</h3>
-                    <p className="text-congress-red font-semibold mt-2">Head of Nephrology & Hypertension</p>
+                    <p className="text-congress-red font-semibold mt-2">Renal Science Chair of the European Renal Association (ERA)</p>
                   </div>
                   <div className="w-full md:w-2/3">
                     <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
