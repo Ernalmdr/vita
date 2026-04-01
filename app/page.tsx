@@ -795,7 +795,7 @@ export default function Home() {
                   <div className="w-16 h-16 rounded-full bg-congress-red text-white flex items-center justify-center flex-shrink-0 text-2xl"><i className="fa-solid fa-map-location-dot"></i></div>
                   <div>
                     <h3 className="text-2xl font-serif font-bold text-gray-800 mb-2">Congress Venue</h3>
-                    <p className="text-gray-600">The Vita Cordis Congress will be held at the <strong>DEU Faculty of Medicine, Classrooms Building, Founding Faculty Members Conference Hall</strong> in İzmir on May 9–10, 2026.</p>
+                    <p className="text-gray-600">The Vita Cordis Congress will be held at the <strong>Dokuz Eylul University Faculty of Medicine, Classrooms Building (Derslikler Binası) , Founding Faculty Members Conference Hall (Kurucu Üyeler Konferans Salonu)</strong> in İzmir on May 9–10, 2026.</p>
                   </div>
                 </div>
                 <div className="info-card bg-white p-6 md:p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-6 items-start">
@@ -1179,7 +1179,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Artificial Intelligence</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;Would you trust it if it was right?&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Tarık Kıvrak &amp; Prof. Dr. Kutsal Özkurt</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Tarık Kıvrak &amp; Kutsal Özkurt</footer>
                   </blockquote>
                 </div>
 
@@ -1191,7 +1191,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Genetics</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The ending was written. We just arrived late.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Mehmet Kocabey</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Assist. Prof. Dr. Mehmet Kocabey</footer>
                   </blockquote>
                 </div>
 
@@ -1241,7 +1241,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Emergency Medicine</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;Seconds decide what minutes can&rsquo;t fix.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Doç. Dr. Birkan Korgan</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Assist. Prof. Dr. Birkan Korgan</footer>
                   </blockquote>
                 </div>
 
@@ -1265,7 +1265,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Metabolism</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The system whispers before it fails.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Dr. Yasir Zaroug</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Yasir Zaroug</footer>
                   </blockquote>
                 </div>
 
