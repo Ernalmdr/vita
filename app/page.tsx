@@ -816,7 +816,7 @@ export default function Home() {
                   <div className="w-16 h-16 rounded-full bg-congress-red text-white flex items-center justify-center flex-shrink-0 text-2xl"><i className="fa-solid fa-certificate"></i></div>
                   <div>
                     <h3 className="text-2xl font-serif font-bold text-gray-800 mb-2">Certificate of Participation</h3>
-                    <p className="text-gray-600">Participants who register and attend at least <strong>10 sessions</strong> will receive a Certificate of Participation.</p>
+                    <p className="text-gray-600">Participants who register and attend at least <strong>8 sessions</strong> will receive a Certificate of Participation.</p>
                   </div>
                 </div>
               </div>
@@ -1356,7 +1356,7 @@ export default function Home() {
                     
                     <div className="text-gray-600 space-y-4 text-justify leading-relaxed">
                       <p>Invited speakers will be accommodated at <strong>Plaza Hotel İzmir</strong>, located in the Balçova district of İzmir.</p>
-                      <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our speakers.</p>
+                      <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our speakers. For the participants that want to stay multiple nights at the mentioned accomodation, another form will be provided further into the process. </p>
                       
 
                     </div>
