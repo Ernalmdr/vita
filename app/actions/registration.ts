@@ -49,12 +49,31 @@ export async function updateRegistrationStatus(id: string, newStatus: string) {
 export async function deleteRegistration(id: string) {
   try {
     const supabase = await createClient();
-    const { error } = await supabase.from('registrations').delete().eq('id', id);
-    if (error) throw error;
+    
+    // Silinen kaydı geri döndürmesini isteyerek gerçekten silinip silinmediğini kontrol edelim
+    const { data, error } = await supabase
+      .from('registrations')
+      .delete()
+      .eq('id', id)
+      .select('id');
+
+    if (error) {
+      console.error('Error deleting registration:', error);
+      return { success: false, error: 'Silme işlemi sırasında veritabanı hatası oluştu.' };
+    }
+
+    if (!data || data.length === 0) {
+      // Eğer hata yok ama data boş döndüyse, RLS engellemiş demektir veya kayıt bulunamamıştır
+      return { 
+        success: false, 
+        error: "Kayıt silinemedi. Supabase panelinden 'registrations' tablosu için DELETE (Silme) RLS Policy'si eklediğinizden emin olun." 
+      };
+    }
+
     revalidatePath('/admin');
     return { success: true };
   } catch (err) {
     console.error('Error deleting registration:', err);
-    return { success: false, error: 'Failed to delete registration' };
+    return { success: false, error: 'Silme işlemi sırasında beklenmeyen bir hata oluştu.' };
   }
 }
