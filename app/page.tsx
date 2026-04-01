@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { submitRegistration } from "@/app/actions/submit-registration";
 import { UploadDropzone } from "../utils/uploadthing";
 
@@ -39,6 +39,7 @@ function RegistrationWizard() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
   const [taahhutChecked, setTaahhutChecked] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const isLocal = origin === "local";
   const accomKey: AccomKey = !wantsAccom ? "none" : roomSize === 1 ? "room1" : roomSize === 2 ? "room2" : "room3";
@@ -61,8 +62,7 @@ function RegistrationWizard() {
     setTaahhutChecked(false); setSubmitResult(null);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async () => {
     if (!taahhutChecked) {
       setSubmitResult({ type: 'error', text: isLocal ? 'Lütfen taahhütnameyi onaylayın.' : 'Please accept the commitment form.' });
       return;
@@ -77,7 +77,8 @@ function RegistrationWizard() {
     }
     setIsSubmitting(true);
     setSubmitResult(null);
-    const fd = new FormData(e.currentTarget);
+    if (!formRef.current) return;
+    const fd = new FormData(formRef.current);
     fd.set('origin', origin!);
     fd.set('role', role!);
     fd.set('accommodation', wantsAccom ? accomKey : 'none');
@@ -336,7 +337,7 @@ function RegistrationWizard() {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form ref={formRef} onSubmit={(e) => e.preventDefault()} className="space-y-5">
             {/* Row 1: Name + School */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="space-y-1.5">
@@ -609,7 +610,8 @@ Vita Cordis Organizing Committee`}
 
             {/* Submit */}
             <button
-              type="submit"
+              type="button"
+              onClick={handleSubmit}
               disabled={isSubmitting}
               className="w-full py-4 rounded-xl bg-congress-red text-white font-bold text-base hover:bg-congress-dark transition-all shadow-lg flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
             >
