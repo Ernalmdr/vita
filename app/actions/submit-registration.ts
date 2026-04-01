@@ -71,7 +71,7 @@ export async function submitRegistration(formData: FormData) {
         : 'A database error occurred. Please try again.' };
     }
 
-    revalidatePath('/admin');
+    // revalidatePath('/admin') removed to avoid unintentional router cache wiping on the client.
     return { success: true };
 
   } catch (error) {
