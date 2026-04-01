@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Check, X, Eye, Globe, User, Search } from 'lucide-react';
-import { updateRegistrationStatus } from '@/app/actions/registration';
+import { Eye, Globe, User, Search, Trash2 } from 'lucide-react';
+import { updateRegistrationStatus, deleteRegistration } from '@/app/actions/registration';
 import React from 'react';
 
 type Registration = {
@@ -72,6 +72,24 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
     } catch (error) {
       console.error(error);
       alert('Failed to update status');
+    } finally {
+      setLoadingId(null);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!confirm('Bu kaydı silmek istediğinize emin misiniz?')) return;
+    setLoadingId(id);
+    try {
+      const result = await deleteRegistration(id);
+      if (result.success) {
+        setData(data.filter(item => item.id !== id));
+      } else {
+        alert(result.error || 'Silme işlemi başarısız oldu');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Silme sırasında bir hata oluştu');
     } finally {
       setLoadingId(null);
     }
@@ -163,27 +181,27 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
                     {new Date(reg.created_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                   </td>
                   <td className="px-6 py-4 text-right space-x-2" onClick={e => e.stopPropagation()}>
-                    {reg.status === 'Pending' && (
-                      <>
-                        <button
-                          onClick={() => handleStatusUpdate(reg.id, 'Approved')}
-                          disabled={loadingId === reg.id}
-                          className="inline-flex items-center space-x-1 px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold rounded-md transition-colors disabled:opacity-50"
-                        >
-                          <Check size={14} /><span>Approve</span>
-                        </button>
-                        <button
-                          onClick={() => handleStatusUpdate(reg.id, 'Rejected')}
-                          disabled={loadingId === reg.id}
-                          className="inline-flex items-center space-x-1 px-3 py-1.5 bg-white border border-gray-200 hover:bg-gray-50 text-gray-700 text-xs font-semibold rounded-md transition-colors disabled:opacity-50"
-                        >
-                          <X size={14} /><span>Reject</span>
-                        </button>
-                      </>
-                    )}
-                    {reg.status !== 'Pending' && (
-                      <span className="text-gray-400 italic text-xs">Handled</span>
-                    )}
+                    <div className="inline-flex items-center gap-2">
+                      <select
+                        value={reg.status}
+                        onChange={(e) => handleStatusUpdate(reg.id, e.target.value)}
+                        disabled={loadingId === reg.id}
+                        className="text-xs border border-gray-200 rounded px-2 py-1.5 bg-white disabled:opacity-50 focus:outline-none focus:ring-1 focus:ring-congress-dark cursor-pointer font-medium text-gray-700"
+                      >
+                        <option value="Pending">Pending</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Rejected">Rejected</option>
+                      </select>
+                      
+                      <button
+                        onClick={() => handleDelete(reg.id)}
+                        disabled={loadingId === reg.id}
+                        className="p-1.5 text-red-500 hover:text-red-700 hover:bg-red-50 rounded transition-colors disabled:opacity-50"
+                        title="Sil"
+                      >
+                        <Trash2 size={16} />
+                      </button>
+                    </div>
                   </td>
                 </tr>
 
@@ -202,10 +220,21 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
                             <span className="block mt-1">
                               <span className="font-medium font-mono block mb-1">{reg.roommate_id}</span>
                               {data.find(r => r.personal_id === reg.roommate_id)?.full_name ? (
-                                <span className="text-blue-600 font-semibold inline-flex items-center gap-1">
+                                <button 
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    const roommate = data.find(r => r.personal_id === reg.roommate_id);
+                                    if (roommate) {
+                                      setExpandedId(roommate.id);
+                                      // Optional: Add a smooth scroll effect to the expanded row if needed,
+                                      // but normally React will just re-render and expand it anyway.
+                                    }
+                                  }}
+                                  className="text-blue-600 font-semibold inline-flex items-center gap-1 hover:underline text-left cursor-pointer focus:outline-none"
+                                >
                                   <User size={12} />
                                   {data.find(r => r.personal_id === reg.roommate_id)?.full_name}
-                                </span>
+                                </button>
                               ) : (
                                 <span className="text-amber-600 font-medium italic">
                                   (Sisteme henüz kayıtlı değil)
