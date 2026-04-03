@@ -887,8 +887,8 @@ export default function Home() {
                       <img src="/muge-sagim.jpg" className="speaker-img" alt="Gülsüm Müge Sağım" />
                     </div>
                     <h4 className="text-lg font-bold text-gray-900">Gülsüm Müge Sağım</h4>
-                    <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
-                    <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">General Coordination</p>
+                    <p className="text-sm text-gray-600 font-semibold">Vice President</p>
+                    <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">General Coordinator</p>
                   </div>
 
                   {/* Organizer 2 */}
@@ -898,7 +898,7 @@ export default function Home() {
                       <img src="/sultan-hilal.jpg" className="speaker-img" alt="Sultan Hilal Solak" />
                     </div>
                     <h4 className="text-lg font-bold text-gray-900">Sultan Hilal Solak</h4>
-                    <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                    <p className="text-sm text-gray-600 font-semibold">Vice President</p>
                     <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Scientific Coordinator</p>
                   </div>
 
@@ -909,7 +909,7 @@ export default function Home() {
                       <img src="/baran-demircan.jpg" className="speaker-img" alt="Tolgay Baran Demircan" />
                     </div>
                     <h4 className="text-lg font-bold text-gray-900">Tolgay Baran Demircan</h4>
-                    <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                    <p className="text-sm text-gray-600 font-semibold">Vice President</p>
                     <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Scientific Coordinator</p>
                   </div>
 
@@ -920,7 +920,7 @@ export default function Home() {
                       <img src="/tunahan-ergurhan.jpg" className="speaker-img" alt="Tunahan Ergürhan" />
                     </div>
                     <h4 className="text-lg font-bold text-gray-900">Tunahan Ergürhan</h4>
-                    <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                    <p className="text-sm text-gray-600 font-semibold">Vice President</p>
                     <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Technical Coordinator</p>
                   </div>
 
@@ -931,7 +931,7 @@ export default function Home() {
                       <img src="/beyza-bilir.jpg" className="speaker-img" alt="Beyza Bilge Bilir" />
                     </div>
                     <h4 className="text-lg font-bold text-gray-900">Beyza Bilge Bilir</h4>
-                    <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                    <p className="text-sm text-gray-600 font-semibold">Vice President</p>
                     <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Design Coordinator</p>
                   </div>
 
@@ -942,7 +942,7 @@ export default function Home() {
                       <img src="/piraye-dundar.jpg" className="speaker-img" alt="Piraye Dündar" />
                     </div>
                     <h4 className="text-lg font-bold text-gray-900">Piraye Dündar</h4>
-                    <p className="text-sm text-gray-600 font-semibold">Congress Chair</p>
+                    <p className="text-sm text-gray-600 font-semibold">Vice President</p>
                     <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Finance Coordinator</p>
                   </div>
                 </div>
@@ -1026,7 +1026,7 @@ export default function Home() {
                   <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
                     <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
                       <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
-                      <img src="/yasir-zaroug.jpg" className="speaker-img" alt="Professor Yasir Zaroug" />
+                      <img src="/yasir-zaroug.jpg" className="speaker-img" alt="Prof. Dr. Yasir Zaroug" />
                     </div>
                     <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Professor Yasir Zaroug</h3>
                     <p className="text-congress-red font-semibold mt-2">Diabetologist & Metabolic Medicine Researcher</p>
@@ -1083,7 +1083,7 @@ export default function Home() {
                       <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
                       <img src="/koksal-alptekin.jpg" className="speaker-img" alt="Prof. Köksal Alptekin" />
                     </div>
-                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Köksal Alptekin, M.D.</h3>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Köksal Alptekin</h3>
                     <p className="text-congress-red font-semibold mt-2">Professor of Psychiatry</p>
                   </div>
                   <div className="w-full md:w-2/3">
@@ -1195,7 +1195,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Genetics</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The ending was written. We just arrived late.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Assist. Prof. Dr. Mehmet Kocabey</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Asst. Prof. Dr. Mehmet Kocabey</footer>
                   </blockquote>
                 </div>
 
@@ -1233,7 +1233,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Cardiology</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The beat returns—but not the past.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Mladen Milovanovic</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Senior Cardiologist Mladen Milovanovic</footer>
                   </blockquote>
                 </div>
 
@@ -1245,7 +1245,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Emergency Medicine</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;Seconds decide what minutes can&rsquo;t fix.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Assist. Prof. Dr. Birkan Korgan</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Asst. Prof. Dr. Birkan Korgan</footer>
                   </blockquote>
                 </div>
 
@@ -1257,7 +1257,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Oncology</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The cure demands a price.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Doç. Dr. Oktay Halit Aktepe</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Assoc. Prof. Oktay Halit Aktepe</footer>
                   </blockquote>
                 </div>
 
