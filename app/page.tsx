@@ -1028,7 +1028,7 @@ export default function Home() {
                       <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
                       <img src="/yasir-zaroug.jpg" className="speaker-img" alt="Prof. Dr. Yasir Zaroug" />
                     </div>
-                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Professor Yasir Zaroug</h3>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Yasir Zaroug</h3>
                     <p className="text-congress-red font-semibold mt-2">Diabetologist & Metabolic Medicine Researcher</p>
                   </div>
                   <div className="w-full md:w-2/3">
@@ -1083,7 +1083,7 @@ export default function Home() {
                       <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
                       <img src="/koksal-alptekin.jpg" className="speaker-img" alt="Prof. Köksal Alptekin" />
                     </div>
-                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Köksal Alptekin</h3>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Köksal Alptekin</h3>
                     <p className="text-congress-red font-semibold mt-2">Professor of Psychiatry</p>
                   </div>
                   <div className="w-full md:w-2/3">
@@ -1257,7 +1257,7 @@ export default function Home() {
                   <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Oncology</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
                     <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;The cure demands a price.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Assoc. Prof. Oktay Halit Aktepe</footer>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Assoc. Prof. Dr. Oktay Halit Aktepe</footer>
                   </blockquote>
                 </div>
 
