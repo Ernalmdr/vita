@@ -21,6 +21,7 @@ export async function submitRegistration(formData: FormData) {
     const accommodation   = formData.get('accommodation') as string; // 'none' | 'room1' | 'room2' | 'room3'
     const roomSize        = formData.get('roomSize') as string;
     const roommateId      = formData.get('roommateId') as string;
+    const nonPhysicianRole= formData.get('nonPhysicianRole') as string;
 
     // Pricing
     const price           = formData.get('price') as string;
@@ -55,6 +56,7 @@ export async function submitRegistration(formData: FormData) {
         accommodation:      accommodation,
         room_size:          roomSize ? parseInt(roomSize) : null,
         roommate_id:        roommateId || null,
+        non_physician_role: nonPhysicianRole || null,
         price:              price ? parseFloat(price) : null,
         currency:           currency,
         passport_photo_url: passportPhotoUrl || null,

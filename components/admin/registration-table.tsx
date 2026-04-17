@@ -18,6 +18,7 @@ type Registration = {
   accommodation?: string | null;
   room_size?: number | null;
   roommate_id?: string | null;
+  non_physician_role?: string | null;
   price?: number | null;
   currency?: string | null;
   country?: string | null;
@@ -260,6 +261,7 @@ export default function RegistrationTable({ initialData }: { initialData: Regist
                         <div><span className="text-gray-400 block">School</span><span className="font-medium">{reg.school ?? '—'}</span></div>
                         <div><span className="text-gray-400 block">Personal ID</span><span className="font-medium font-mono">{reg.personal_id ?? '—'}</span></div>
                         <div><span className="text-gray-400 block">Date of Birth</span><span className="font-medium">{reg.birth_date ?? '—'}</span></div>
+                        <div><span className="text-gray-400 block">Non-Physician Role</span><span className="font-medium">{reg.non_physician_role ?? '—'}</span></div>
                         <div>
                           <span className="text-gray-400 block">Roommate ID</span>
                           {/* Oda arkadaşı verisi yine TÜM data içinden aranıyor, böylece arama yapılsa bile eşleşme bozulmuyor */}

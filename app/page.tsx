@@ -423,6 +423,24 @@ function RegistrationWizard() {
               </div>
             </div>
 
+            {/* Role: hekim dışı sağlık çalışanı */}
+            {role === 'physician' && (
+              <div className="space-y-1.5 mt-4 pt-4 border-t border-gray-100">
+                <label className="block text-sm font-bold text-gray-700">
+                  {isLocal ? 'Mesleğiniz (Hekim Dışı Sağlık Çalışanları için)' : 'Profession (For Non-Physician Health Professionals)'}
+                </label>
+                <div className="relative">
+                  <i className="fa-solid fa-user-nurse absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                  <input type="text" name="nonPhysicianRole"
+                    className="form-input bg-gray-50 pl-10 w-full"
+                    placeholder={isLocal ? 'Örn. Hemşire, Teknisyen' : 'e.g. Nurse, Technician'} />
+                </div>
+                <p className="text-xs text-gray-400 mt-1">
+                  {isLocal ? 'Eğer hekim dışı bir sağlık çalışanıysanız (hemşire, teknisyen vb.), lütfen unvanınızı belirtin.' : 'If you are a non-physician healthcare professional (nurse, technician, etc.), please specify your title.'}
+                </p>
+              </div>
+            )}
+
             {/* International extras */}
             {!isLocal && (
               <>
@@ -970,6 +988,25 @@ export default function Home() {
               </div>
 
               <div className="space-y-12">
+                {/* Artur Badyda */}
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                  <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                    <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                      <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                      <img src="/artur-badyda.jpg" className="speaker-img" alt="Prof. Dr. Artur Badyda" />
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Artur Badyda</h3>
+                    <p className="text-congress-red font-semibold mt-2">Environmental Health Expert</p>
+                  </div>
+                  <div className="w-full md:w-2/3">
+                    <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                      <p>Prof. Dr. Artur Badyda is an environmental health expert and academic at the Warsaw University of Technology, where he is involved in both research and teaching in the fields of environmental engineering and public health. He has also held various academic and administrative roles within his institution, contributing to the development of environmental health research and policy-oriented studies.</p>
+                      <p>His research focuses on air pollution, environmental exposure assessment, and the health effects of air quality, particularly in relation to cardiovascular and respiratory diseases. He has participated in numerous national and international research projects and has authored a wide range of scientific publications addressing the impact of environmental factors on population health.</p>
+                      <p>His work reflects a multidisciplinary approach, bridging environmental science, engineering, and medicine, with a strong emphasis on translating scientific data into real-world health impact assessments.</p>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Carlos A. Mestres */}
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
                   <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
@@ -1157,25 +1194,6 @@ export default function Home() {
                       <p>Throughout her career, she has played an active role in establishing and developing paediatric cardiology services, including founding dedicated units at both Denizli State Hospital and Pamukkale University. Her work has contributed to strengthening the clinical infrastructure and accessibility of paediatric cardiac care.</p>
                       <p>Her main areas of expertise include paediatric and fetal echocardiography, cardiac rhythm disorders, and interventional cardiology. She focuses on the diagnosis and management of congenital and acquired heart diseases in children, including conditions such as rheumatic heart disease and Kawasaki disease.</p>
                       <p>In addition to her clinical work, she is actively involved in medical education, contributing to the training of both undergraduate and postgraduate students with a practical and patient-oriented approach.</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Artur Badyda */}
-                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
-                  <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
-                    <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
-                      <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
-                      <img src="/artur-badyda.jpg" className="speaker-img" alt="Prof. Dr. Artur Badyda" />
-                    </div>
-                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Artur Badyda</h3>
-                    <p className="text-congress-red font-semibold mt-2">Environmental Health Expert</p>
-                  </div>
-                  <div className="w-full md:w-2/3">
-                    <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
-                      <p>Prof. Dr. Artur Badyda is an environmental health expert and academic at the Warsaw University of Technology, where he is involved in both research and teaching in the fields of environmental engineering and public health. He has also held various academic and administrative roles within his institution, contributing to the development of environmental health research and policy-oriented studies.</p>
-                      <p>His research focuses on air pollution, environmental exposure assessment, and the health effects of air quality, particularly in relation to cardiovascular and respiratory diseases. He has participated in numerous national and international research projects and has authored a wide range of scientific publications addressing the impact of environmental factors on population health.</p>
-                      <p>His work reflects a multidisciplinary approach, bridging environmental science, engineering, and medicine, with a strong emphasis on translating scientific data into real-world health impact assessments.</p>
                     </div>
                   </div>
                 </div>
