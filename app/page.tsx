@@ -174,6 +174,14 @@ function RegistrationWizard() {
               </button>
             ))}
           </div>
+          <p className="text-xs text-gray-400 text-center max-w-md px-4 mt-2">
+            <i className="fa-solid fa-circle-info text-congress-red/60 mr-1" />
+            {isLocal ? (
+              <>Hekim dışı sağlık çalışanları (hemşire, teknisyen, sağlık yardımcı personelleri vb.), kayıt işlemlerine <strong className="text-gray-600">Hekim</strong> kategorisi üzerinden devam edebilirler.</>
+            ) : (
+              <>Non-physician healthcare professionals (nurses, technicians, allied health workers, etc.) may proceed with registration under the <strong className="text-gray-600">Physician</strong> category.</>
+            )}
+          </p>
           <button onClick={() => setStep(0)} className="text-sm text-gray-400 hover:text-congress-red transition-colors mt-2">
             ← {isLocal ? 'Geri' : 'Back'}
           </button>
@@ -1071,7 +1079,7 @@ export default function Home() {
                   </div>
                   <div className="w-full md:w-2/3">
                     <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
-                      <p>Mehmet is a clinical geneticist with a special interest in rare diseases. He graduated from Ankara University Faculty of Medicine in 2015. After obtaining his residency degree in medical genetics from Dokuz Eylül University Faculty of Medicine, he played a role in running genetic outpatient clinics in various cities across Turkey. He has diagnosed many patients and provided pre- and post-test genetic counselling. Additionally, he was involved in laboratory setup processes. He has advanced experience in both cytogenetic techniques (chromosome analysis, FISH, etc.) and molecular genetic techniques (Next Generation Sequencing, Sanger sequencing, PCR-based methods, deletion and duplication analyses, etc.). He has been working in the field of clinical and laboratory genetics for the last 11 years, and he has publications and conference presentations on rare diseases. Since 2023, he has been participating as an academic lecturer in undergraduate and postgraduate education at Dokuz Eylül University, Department of Medical Genetics.</p>
+                      <p>Dr. Mehmet is a clinical geneticist with a special interest in rare diseases. He graduated from Ankara University Faculty of Medicine in 2015. After obtaining his residency degree in medical genetics from Dokuz Eylül University Faculty of Medicine, he played a role in running genetic outpatient clinics in various cities across Turkey. He has diagnosed many patients and provided pre- and post-test genetic counselling. Additionally, he was involved in laboratory setup processes. He has advanced experience in both cytogenetic techniques (chromosome analysis, FISH, etc.) and molecular genetic techniques (Next Generation Sequencing, Sanger sequencing, PCR-based methods, deletion and duplication analyses, etc.). He has been working in the field of clinical and laboratory genetics for the last 11 years, and he has publications and conference presentations on rare diseases. Since 2023, he has been participating as an academic lecturer in undergraduate and postgraduate education at Dokuz Eylül University, Department of Medical Genetics.</p>
                     </div>
                   </div>
                 </div>
@@ -1126,9 +1134,48 @@ export default function Home() {
                   </div>
                   <div className="w-full md:w-2/3">
                     <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
-                      <p>Prof. Dr. Tarık Kıvrak is a cardiologist and academic at Fırat University Faculty of Medicine, where he is actively involved in both clinical practice and research. His work focuses on key areas of cardiovascular medicine, including heart failure and pulmonary hypertension, while also exploring the evolving role of emerging technologies in cardiology.</p>
-                      <p>His work increasingly focuses on the integration of artificial intelligence into cardiovascular medicine. He has contributed extensively to the scientific literature, with numerous publications and collaborative research efforts exploring both traditional clinical cardiology and innovative, data-driven approaches.</p>
-                      <p>Prof. Dr. Kıvrak's research reflects a multidisciplinary perspective, combining clinical cardiology with advanced analytical and computational methods. His recent work highlights the use of artificial intelligence in areas such as pulmonary hypertension detection and cardiovascular risk assessment, aiming to improve diagnostic accuracy and patient outcomes in real-world settings.</p>
+                      <p>Prof. Dr. Tarık Kıvrak is a cardiologist and academic specialising in cardiovascular medicine. He completed his medical education at Ondokuz Mayıs University Faculty of Medicine and his cardiology residency at Marmara University Faculty of Medicine. Since 2017, he has been serving as a faculty member at the Department of Cardiology at Fırat University Faculty of Medicine.</p>
+                      <p>He pursued advanced training in pulmonary vascular diseases at the University of Bologna (2018–2019), and in heart failure at the University of Zurich (2023–2025). He also completed training in Machine Learning and Artificial Intelligence at Imperial College Business School (2024–2025).</p>
+                      <p>Prof. Dr. Kıvrak's research focuses on pulmonary vascular diseases, heart failure, innovative diagnostic approaches in cardiovascular diseases, advanced data analysis, and AI-supported clinical decision systems. He is a member of the Heart–Brain Working Group of the European Society of Cardiology Heart Failure Association, previously served as Chair of the Artificial Intelligence Working Group of the Turkish Society of Cardiology, and currently holds a position as Board Member of the International Artificial Intelligence Group of the American College of Cardiology.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dolunay Gürses */}
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                  <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                    <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                      <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                      <img src="/dolunay-gurses.jpg" className="speaker-img" alt="Prof. Dr. Dolunay Gürses" />
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Dolunay Gürses</h3>
+                    <p className="text-congress-red font-semibold mt-2">Paediatric Cardiologist</p>
+                  </div>
+                  <div className="w-full md:w-2/3">
+                    <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                      <p>Prof. Dr. Dolunay Gürses is a paediatric cardiologist with long-standing experience in both clinical practice and academic medicine. After graduating from Ege University Faculty of Medicine, she completed her training in paediatrics and paediatric cardiology, and continued her academic career at Pamukkale University.</p>
+                      <p>Throughout her career, she has played an active role in establishing and developing paediatric cardiology services, including founding dedicated units at both Denizli State Hospital and Pamukkale University. Her work has contributed to strengthening the clinical infrastructure and accessibility of paediatric cardiac care.</p>
+                      <p>Her main areas of expertise include paediatric and fetal echocardiography, cardiac rhythm disorders, and interventional cardiology. She focuses on the diagnosis and management of congenital and acquired heart diseases in children, including conditions such as rheumatic heart disease and Kawasaki disease.</p>
+                      <p>In addition to her clinical work, she is actively involved in medical education, contributing to the training of both undergraduate and postgraduate students with a practical and patient-oriented approach.</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Artur Badyda */}
+                <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition duration-300">
+                  <div className="w-full md:w-1/3 flex flex-col items-center text-center flex-shrink-0">
+                    <div className="w-40 h-40 rounded-2xl bg-gray-100 border-4 border-congress-cream shadow-inner overflow-hidden relative mb-4 flex items-center justify-center text-gray-300">
+                      <i className="fa-solid fa-user-tie text-6xl absolute z-0"></i>
+                      <img src="/artur-badyda.jpg" className="speaker-img" alt="Prof. Dr. Artur Badyda" />
+                    </div>
+                    <h3 className="text-2xl font-serif font-bold text-gray-900 leading-tight">Prof. Dr. Artur Badyda</h3>
+                    <p className="text-congress-red font-semibold mt-2">Environmental Health Expert</p>
+                  </div>
+                  <div className="w-full md:w-2/3">
+                    <div className="text-gray-600 text-justify text-sm md:text-base space-y-4 leading-relaxed">
+                      <p>Prof. Dr. Artur Badyda is an environmental health expert and academic at the Warsaw University of Technology, where he is involved in both research and teaching in the fields of environmental engineering and public health. He has also held various academic and administrative roles within his institution, contributing to the development of environmental health research and policy-oriented studies.</p>
+                      <p>His research focuses on air pollution, environmental exposure assessment, and the health effects of air quality, particularly in relation to cardiovascular and respiratory diseases. He has participated in numerous national and international research projects and has authored a wide range of scientific publications addressing the impact of environmental factors on population health.</p>
+                      <p>His work reflects a multidisciplinary approach, bridging environmental science, engineering, and medicine, with a strong emphasis on translating scientific data into real-world health impact assessments.</p>
                     </div>
                   </div>
                 </div>
@@ -1237,15 +1284,15 @@ export default function Home() {
                   </blockquote>
                 </div>
 
-                {/* Emergency Medicine */}
+                {/* Paediatric Cardiology */}
                 <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition flex flex-col">
                   <div className="w-12 h-12 bg-congress-cream rounded-lg flex items-center justify-center text-congress-red mb-4">
-                    <i className="fa-solid fa-truck-medical text-2xl"></i>
+                    <i className="fa-solid fa-heart text-2xl"></i>
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Emergency Medicine</h4>
+                  <h4 className="text-xl font-serif font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">Paediatric Cardiology</h4>
                   <blockquote className="flex-1 flex flex-col justify-between">
-                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;Seconds decide what minutes can&rsquo;t fix.&rdquo;</p>
-                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Asst. Prof. Dr. Birkan Korgan</footer>
+                    <p className="text-gray-700 italic text-sm leading-relaxed mb-3">&ldquo;Some hearts are born different.&rdquo;</p>
+                    <footer className="text-xs font-semibold text-congress-red uppercase tracking-wide">— Prof. Dr. Dolunay G&uuml;rses</footer>
                   </blockquote>
                 </div>
 
@@ -1360,7 +1407,11 @@ export default function Home() {
                     
                     <div className="text-gray-600 space-y-4 text-justify leading-relaxed">
                       <p>Participants will be accommodated at <strong>Plaza Hotel İzmir</strong>, located in the Balçova district of İzmir.</p>
-                      <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our speakers. For the participants that want to stay multiple nights at the mentioned accomodation, another form will be provided further into the process. </p>
+                      <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our speakers.</p>
+                      <p className="flex items-start gap-2 bg-congress-cream border border-congress-red/10 rounded-lg px-4 py-3 text-sm">
+                        <i className="fa-solid fa-circle-info text-congress-red mt-0.5 flex-shrink-0" />
+                        <span>Participants wishing to stay for more than one night are welcome to contact us directly at <a href="mailto:vita.cordis.2026@gmail.com" className="font-bold text-congress-red hover:underline">vita.cordis.2026@gmail.com</a> to arrange extended accommodation.</span>
+                      </p>
                       
 
                     </div>
