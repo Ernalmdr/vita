@@ -302,8 +302,8 @@ function RegistrationWizard() {
               {isLocal ? (
                 <>
                   <p><span className="text-gray-500">Banka:</span> <strong>Ziraat Bankası</strong></p>
-                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR 5400 0100 1554 7757 5050 5015</strong></p>
-                  <p><span className="text-gray-500">Hesap Sahibi:</span> <strong>Piraye Dündar</strong></p>
+                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR95 0001 0013 1769 7292 2350 04</strong></p>
+                  <p><span className="text-gray-500">Hesap Sahibi:</span> <strong>Gülsüm Müge Sağım</strong></p>
                   <p className="bg-white border border-congress-red/10 rounded-lg px-3 py-2 mt-3 text-gray-600 text-xs">
                     📌 Açıklamaya: <span className="font-bold text-congress-red">[Ad Soyad] – Vita Cordis 2026</span> yazınız
                   </p>
@@ -311,8 +311,8 @@ function RegistrationWizard() {
               ) : (
                 <>
                   <p><span className="text-gray-500">Bank:</span> <strong>Ziraat Bankası</strong></p>
-                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR 1100 0100 1554 7757 5050 5013</strong></p>
-                  <p><span className="text-gray-500">Account Holder:</span> <strong>Piraye Dündar</strong></p>
+                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR68 0001 0013 1769 7292 2350 05</strong></p>
+                  <p><span className="text-gray-500">Account Holder:</span> <strong>Gülsüm Müge Sağım</strong></p>
                   <p className="bg-white border border-congress-red/10 rounded-lg px-3 py-2 mt-3 text-gray-600 text-xs">
                     📌 Description: <span className="font-bold text-congress-red">[Full Name] – Vita Cordis 2026</span>
                   </p>
