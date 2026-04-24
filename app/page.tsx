@@ -1352,7 +1352,7 @@ export default function Home() {
                 <div className="w-24 h-1 bg-congress-red mx-auto mb-8"></div>
                 <div className="inline-flex items-center gap-3 bg-red-50 text-congress-red border border-red-100 px-6 py-3 rounded-lg shadow-sm">
                   <i className="fa-regular fa-clock text-xl"></i>
-                  <span className="font-bold uppercase tracking-wider">Deadline: <span className="text-black">24 April 2026</span></span>
+                  <span className="font-bold uppercase tracking-wider">Deadline: <span className="text-black">4 May 2026</span></span>
                 </div>
               </div>
 
@@ -1425,7 +1425,7 @@ export default function Home() {
                     
                     <div className="text-gray-600 space-y-4 text-justify leading-relaxed">
                       <p>Participants will be accommodated at <strong>Plaza Hotel İzmir</strong>, located in the Balçova district of İzmir.</p>
-                      <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our speakers.</p>
+                      <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our participants.</p>
                       <p className="flex items-start gap-2 bg-congress-cream border border-congress-red/10 rounded-lg px-4 py-3 text-sm">
                         <i className="fa-solid fa-circle-info text-congress-red mt-0.5 flex-shrink-0" />
                         <span>Participants wishing to stay for more than one night are welcome to contact us directly at <a href="mailto:vita.cordis.2026@gmail.com" className="font-bold text-congress-red hover:underline">vita.cordis.2026@gmail.com</a> to arrange extended accommodation.</span>
