@@ -866,7 +866,7 @@ export default function Home() {
 
               {/* Advisors */}
               <div className="mb-20">
-                <h3 className="text-2xl font-serif font-bold text-congress-gold mb-10 text-center uppercase tracking-widest">Congress Advisors</h3>
+                <h3 className="text-2xl font-serif font-bold text-congress-gold mb-10 text-center uppercase tracking-widest">Congress Advisor</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
 
                   {/* Advisor 1 */}
@@ -877,26 +877,6 @@ export default function Home() {
                     </div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">Asst. Prof. Ceren SAYARER</h4>
                     <p className="text-sm text-congress-red font-semibold">Congress Advisor</p>
-                  </div>
-
-                  {/* Advisor 2 */}
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
-                    <div className="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
-                      <i className="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
-                      <img src="/tugra-gencpinar.jpg" className="speaker-img" alt="Prof. Dr. Tuğra GENÇPINAR" />
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">Prof. Dr. Tuğra GENÇPINAR</h4>
-                    <p className="text-sm text-congress-red font-semibold">Chief Physician, Dokuz Eylül University Hospital</p>
-                  </div>
-
-                  {/* Advisor 3 */}
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
-                    <div className="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
-                      <i className="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
-                      <img src="/serdar-bayrak.jpg" className="speaker-img" alt="Prof. Dr. Serdar BAYRAK" />
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">Prof. Dr. Serdar BAYRAK</h4>
-                    <p className="text-sm text-congress-red font-semibold">Dean, Dokuz Eylül University Faculty of Medicine</p>
                   </div>
                 </div>
               </div>
@@ -959,17 +939,6 @@ export default function Home() {
                     <h4 className="text-lg font-bold text-gray-900">Beyza Bilge Bilir</h4>
                     <p className="text-sm text-gray-600 font-semibold">Vice President</p>
                     <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Design Coordinator</p>
-                  </div>
-
-                  {/* Organizer 6 */}
-                  <div className="text-center group">
-                    <div className="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition text-gray-300">
-                      <i className="fa-solid fa-user text-4xl absolute z-0"></i>
-                      <img src="/piraye-dundar.jpg" className="speaker-img" alt="Piraye Dündar" />
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900">Piraye Dündar</h4>
-                    <p className="text-sm text-gray-600 font-semibold">Vice President</p>
-                    <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Finance Coordinator</p>
                   </div>
                 </div>
               </div>
