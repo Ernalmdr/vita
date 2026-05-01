@@ -13,7 +13,7 @@ const PRICES: Record<Origin, Record<Role, Record<AccomKey, number>>> = {
   local: {
     specialist:  { none: 1250, room1: 3800, room2: 2500, room3: 2500 }, // Base (750/3300/2000) + 500 TL
     physician:   { none: 1000, room1: 3550, room2: 2250, room3: 2250 }, // Base + 250 TL
-    med_student: { none: 750,  room1: 3300, room2: 2000, room3: 2000 }, // Base + 0
+    med_student: { none: 750,  room1: 3500, room2: 2500, room3: 1500 }, // Base + 0
   },
   international: {
     specialist:  { none: 25, room1: 75, room2: 50, room3: 50 }, // Base (15/65/40) + 10 €
