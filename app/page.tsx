@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 import { submitRegistration } from "@/app/actions/submit-registration";
 import { UploadDropzone } from "../utils/uploadthing";
+import { PopupModal } from "@/components/home/popup-modal";
 
 // ── Price lookup table ───────────────────────────────────────────────────────
 type Origin = "local" | "international";
@@ -302,8 +303,8 @@ function RegistrationWizard() {
               {isLocal ? (
                 <>
                   <p><span className="text-gray-500">Banka:</span> <strong>Ziraat Bankası</strong></p>
-                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR 5400 0100 1554 7757 5050 5015</strong></p>
-                  <p><span className="text-gray-500">Hesap Sahibi:</span> <strong>Piraye Dündar</strong></p>
+                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR95 0001 0013 1769 7292 2350 04</strong></p>
+                  <p><span className="text-gray-500">Hesap Sahibi:</span> <strong>Gülsüm Müge Sağım</strong></p>
                   <p className="bg-white border border-congress-red/10 rounded-lg px-3 py-2 mt-3 text-gray-600 text-xs">
                     📌 Açıklamaya: <span className="font-bold text-congress-red">[Ad Soyad] – Vita Cordis 2026</span> yazınız
                   </p>
@@ -311,8 +312,8 @@ function RegistrationWizard() {
               ) : (
                 <>
                   <p><span className="text-gray-500">Bank:</span> <strong>Ziraat Bankası</strong></p>
-                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR 1100 0100 1554 7757 5050 5013</strong></p>
-                  <p><span className="text-gray-500">Account Holder:</span> <strong>Piraye Dündar</strong></p>
+                  <p><span className="text-gray-500">IBAN:</span> <strong className="font-mono">TR68 0001 0013 1769 7292 2350 05</strong></p>
+                  <p><span className="text-gray-500">Account Holder:</span> <strong>Gülsüm Müge Sağım</strong></p>
                   <p className="bg-white border border-congress-red/10 rounded-lg px-3 py-2 mt-3 text-gray-600 text-xs">
                     📌 Description: <span className="font-bold text-congress-red">[Full Name] – Vita Cordis 2026</span>
                   </p>
@@ -706,6 +707,7 @@ export default function Home() {
 
   return (
     <>
+      <PopupModal />
       {/* Navbar */}
       <nav className="fixed w-full z-50 bg-congress-red text-white shadow-xl transition-all duration-300 border-b border-white/10">
         <div className="container mx-auto px-4">
@@ -866,7 +868,7 @@ export default function Home() {
 
               {/* Advisors */}
               <div className="mb-20">
-                <h3 className="text-2xl font-serif font-bold text-congress-gold mb-10 text-center uppercase tracking-widest">Congress Advisors</h3>
+                <h3 className="text-2xl font-serif font-bold text-congress-gold mb-10 text-center uppercase tracking-widest">Congress Advisor</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
 
                   {/* Advisor 1 */}
@@ -877,26 +879,6 @@ export default function Home() {
                     </div>
                     <h4 className="text-lg font-bold text-gray-900 mb-1">Asst. Prof. Ceren SAYARER</h4>
                     <p className="text-sm text-congress-red font-semibold">Congress Advisor</p>
-                  </div>
-
-                  {/* Advisor 2 */}
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
-                    <div className="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
-                      <i className="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
-                      <img src="/tugra-gencpinar.jpg" className="speaker-img" alt="Prof. Dr. Tuğra GENÇPINAR" />
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">Prof. Dr. Tuğra GENÇPINAR</h4>
-                    <p className="text-sm text-congress-red font-semibold">Chief Physician, Dokuz Eylül University Hospital</p>
-                  </div>
-
-                  {/* Advisor 3 */}
-                  <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center group hover:shadow-md transition">
-                    <div className="w-32 h-32 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center border-4 border-congress-cream overflow-hidden relative shadow-inner">
-                      <i className="fa-solid fa-user-tie text-5xl text-gray-300 absolute z-0"></i>
-                      <img src="/serdar-bayrak.jpg" className="speaker-img" alt="Prof. Dr. Serdar BAYRAK" />
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900 mb-1">Prof. Dr. Serdar BAYRAK</h4>
-                    <p className="text-sm text-congress-red font-semibold">Dean, Dokuz Eylül University Faculty of Medicine</p>
                   </div>
                 </div>
               </div>
@@ -959,17 +941,6 @@ export default function Home() {
                     <h4 className="text-lg font-bold text-gray-900">Beyza Bilge Bilir</h4>
                     <p className="text-sm text-gray-600 font-semibold">Vice President</p>
                     <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Design Coordinator</p>
-                  </div>
-
-                  {/* Organizer 6 */}
-                  <div className="text-center group">
-                    <div className="w-28 h-28 mx-auto bg-gray-100 rounded-2xl mb-4 flex items-center justify-center shadow-inner overflow-hidden relative border-2 border-transparent group-hover:border-congress-gold transition text-gray-300">
-                      <i className="fa-solid fa-user text-4xl absolute z-0"></i>
-                      <img src="/piraye-dundar.jpg" className="speaker-img" alt="Piraye Dündar" />
-                    </div>
-                    <h4 className="text-lg font-bold text-gray-900">Piraye Dündar</h4>
-                    <p className="text-sm text-gray-600 font-semibold">Vice President</p>
-                    <p className="text-xs text-congress-red font-bold uppercase tracking-wider mt-1">Finance Coordinator</p>
                   </div>
                 </div>
               </div>
@@ -1352,7 +1323,7 @@ export default function Home() {
                 <div className="w-24 h-1 bg-congress-red mx-auto mb-8"></div>
                 <div className="inline-flex items-center gap-3 bg-red-50 text-congress-red border border-red-100 px-6 py-3 rounded-lg shadow-sm">
                   <i className="fa-regular fa-clock text-xl"></i>
-                  <span className="font-bold uppercase tracking-wider">Deadline: <span className="text-black">24 April 2026</span></span>
+                  <span className="font-bold uppercase tracking-wider">Deadline: <span className="text-black">4 May 2026</span></span>
                 </div>
               </div>
 
@@ -1425,7 +1396,7 @@ export default function Home() {
                     
                     <div className="text-gray-600 space-y-4 text-justify leading-relaxed">
                       <p>Participants will be accommodated at <strong>Plaza Hotel İzmir</strong>, located in the Balçova district of İzmir.</p>
-                      <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our speakers.</p>
+                      <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our participants.</p>
                       <p className="flex items-start gap-2 bg-congress-cream border border-congress-red/10 rounded-lg px-4 py-3 text-sm">
                         <i className="fa-solid fa-circle-info text-congress-red mt-0.5 flex-shrink-0" />
                         <span>Participants wishing to stay for more than one night are welcome to contact us directly at <a href="mailto:vita.cordis.2026@gmail.com" className="font-bold text-congress-red hover:underline">vita.cordis.2026@gmail.com</a> to arrange extended accommodation.</span>
