@@ -700,6 +700,7 @@ export default function Home() {
     { id: "organization", html: <>Organization<br />Committee</>, mobileText: "Organization Committee" },
     { id: "speakers", html: <>Invited<br />Speakers</>, mobileText: "Invited Speakers" },
     { id: "program", html: <>Scientific<br />Program</>, mobileText: "Scientific Program" },
+    { id: "schedule", html: <>Program<br />Schedule</>, mobileText: "Program Schedule" },
     { id: "abstract", html: <>Abstract<br />Submission</>, mobileText: "Abstract Submission" },
     { id: "social", html: <>Social<br />Events</>, mobileText: "Social Events" },
     { id: "registration", html: <>Registration &<br />Accommodation</>, mobileText: "Registration & Accommodation" },
@@ -1310,6 +1311,102 @@ export default function Home() {
                 </div>
 
               </div>
+            </div>
+          </div>
+        )}
+
+        {/* PROGRAM SCHEDULE */}
+        {activeSection === "schedule" && (
+          <div className="page-section py-12">
+            <div className="container mx-auto px-6 max-w-5xl">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Program Schedule</h2>
+                <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
+                <p className="text-gray-500 text-sm uppercase tracking-widest font-bold">Sessions and Panels Flow</p>
+              </div>
+
+              {/* Saturday Schedule */}
+              <div className="mb-16">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="bg-congress-red text-white px-6 py-2 rounded-lg font-bold text-lg shadow-sm">
+                    09 May 2026
+                  </div>
+                  <h3 className="text-2xl font-serif text-gray-800">Saturday</h3>
+                </div>
+
+                <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+                  {[
+                    { time: "09:15 - 09:30", title: "Opening Ceremony", isBreak: true },
+                    { time: "09:30 - 10:15", title: "Cardiology", subtitle: "Can We Turn This F to an A-: Heart Failure", speaker: "Dr. Mladen Milovanovic" },
+                    { time: "10:15 - 10:30", title: "Coffee Break", isBreak: true },
+                    { time: "10:30 - 11:15", title: "Genetics", subtitle: "A Mistake in the Ancient Ink: Syndromic Heart Diseases", speaker: "Asst. Prof. Dr. Mehmet Kocabey" },
+                    { time: "11:15 - 11:30", title: "Coffee Break", isBreak: true },
+                    { time: "11:30 - 12:15", title: "Cardiovascular Surgery", subtitle: "When Infection Demands Surgery: Endocarditis", speaker: "Prof. Dr. Carlos A. Mestres" },
+                    { time: "12:15 - 12:45", title: "Lunch Break", isBreak: true },
+                    { time: "12:45 - 13:15", title: "Wellness Break", isBreak: true },
+                    { time: "13:15 - 14:00", title: "Oncology", subtitle: "Oncological Paradox: Treat Cancer or Save the Heart", speaker: "Assoc. Prof. Oktay Halit Aktepe" },
+                    { time: "14:00 - 14:15", title: "Coffee Break", isBreak: true },
+                    { time: "14:15 - 15:15", title: "Cardiology and AI", subtitle: "Session 1: Cardiology 2.0 : Reinvention of Cardiology with AI (Prof. Dr. Tarık Kıvrak)\nSession 2: “This Diagnosis Was Made by AI” (Kutsal Baran Özkurt)", speaker: "Prof. Dr. Tarık Kıvrak & Kutsal Baran Özkurt" },
+                    { time: "15:15 - 15:30", title: "Coffee Break", isBreak: true },
+                    { time: "15:30 - 16:00", title: "Oral Presentations", isBreak: true },
+                    { time: "16:00 - 16:30", title: "Mind & Body Session", isBreak: true },
+                  ].map((item, idx) => (
+                    <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-congress-red text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        {item.isBreak ? <i className="fa-solid fa-mug-hot text-xs"></i> : <i className="fa-solid fa-stethoscope text-xs"></i>}
+                      </div>
+                      <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border ${item.isBreak ? 'bg-gray-50 border-gray-100' : 'bg-white border-gray-200 shadow-sm hover:shadow-md transition-shadow'} `}>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className={`font-bold ${item.isBreak ? 'text-gray-500' : 'text-congress-red'}`}>{item.time}</span>
+                        </div>
+                        <h4 className={`text-lg font-bold text-gray-800 ${!item.subtitle && !item.isBreak ? 'mb-0' : 'mb-1'}`}>{item.title}</h4>
+                        {item.subtitle && <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{item.subtitle}</p>}
+                        {item.speaker && <p className="text-xs font-semibold text-congress-gold"><i className="fa-regular fa-user mr-1"></i> {item.speaker}</p>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Sunday Schedule */}
+              <div>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="bg-congress-red text-white px-6 py-2 rounded-lg font-bold text-lg shadow-sm">
+                    10 May 2026
+                  </div>
+                  <h3 className="text-2xl font-serif text-gray-800">Sunday</h3>
+                </div>
+
+                <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
+                  {[
+                    { time: "09:30 - 10:15", title: "Psychiatry", subtitle: "The Shadow of Schizophrenia", speaker: "Prof. Dr. Köksal Alptekin" },
+                    { time: "10:15 - 10:30", title: "Coffee Break", isBreak: true },
+                    { time: "10:30 - 11:00", title: "Metabolism", subtitle: "Are You Eating Sugar or Is the Sugar Eating Your Heart?", speaker: "Prof. Dr. Yasir Zaroug" },
+                    { time: "11:00 - 11:15", title: "Coffee Break", isBreak: true },
+                    { time: "11:15 - 12:00", title: "Nephrology", subtitle: "Wrinkles? Never Heart of Them: Aging vs. Kidneys", speaker: "Prof. Dr. Alberto Ortiz" },
+                    { time: "12:00 - 13:00", title: "Lunch Break", isBreak: true },
+                    { time: "13:00 - 13:45", title: "Environmental Health", subtitle: "The Ghost in Every Breath: The Air Around Us", speaker: "Prof. Artur Badyda" },
+                    { time: "13:45 - 14:00", title: "Coffee Break", isBreak: true },
+                    { time: "14:00 - 14:45", title: "Beyond the White Coat", subtitle: "The Real Journey of Medicine" },
+                    { time: "14:50", title: "Closing Ceremony", isBreak: true },
+                  ].map((item, idx) => (
+                    <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-congress-red text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        {item.isBreak ? <i className="fa-solid fa-mug-hot text-xs"></i> : <i className="fa-solid fa-stethoscope text-xs"></i>}
+                      </div>
+                      <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border ${item.isBreak ? 'bg-gray-50 border-gray-100' : 'bg-white border-gray-200 shadow-sm hover:shadow-md transition-shadow'} `}>
+                        <div className="flex items-center justify-between mb-1">
+                          <span className={`font-bold ${item.isBreak ? 'text-gray-500' : 'text-congress-red'}`}>{item.time}</span>
+                        </div>
+                        <h4 className={`text-lg font-bold text-gray-800 ${!item.subtitle && !item.isBreak ? 'mb-0' : 'mb-1'}`}>{item.title}</h4>
+                        {item.subtitle && <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{item.subtitle}</p>}
+                        {item.speaker && <p className="text-xs font-semibold text-congress-gold"><i className="fa-regular fa-user mr-1"></i> {item.speaker}</p>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         )}
