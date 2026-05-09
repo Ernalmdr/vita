@@ -1367,20 +1367,20 @@ export default function Home() {
 
                   <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
                     {[
-                      { time: "09:15 - 09:30", title: "Opening Ceremony", isBreak: true },
-                      { time: "09:30 - 10:15", title: "Cardiology", subtitle: "Can We Turn This F to an A-: Heart Failure", speakers: [{ name: "Dr. Mladen Milovanovic", id: "speaker-mladen-milovanovic" }] },
-                      { time: "10:15 - 10:30", title: "Coffee Break", isBreak: true },
-                      { time: "10:30 - 11:15", title: "Cardiovascular Surgery", subtitle: "When Infection Demands Surgery: Endocarditis", speakers: [{ name: "Prof. Dr. Carlos A. Mestres", id: "speaker-carlos-mestres" }] },
+                      { time: "10:15 - 10:30", title: "Opening Ceremony", isBreak: true },
+                      { time: "10:30 - 11:15", title: "Cardiology", subtitle: "Can We Turn This F to an A-: Heart Failure", speakers: [{ name: "Dr. Mladen Milovanovic", id: "speaker-mladen-milovanovic" }] },
                       { time: "11:15 - 11:30", title: "Coffee Break", isBreak: true },
-                      { time: "11:30 - 12:15", title: "Genetics", subtitle: "A Mistake in the Ancient Ink: Syndromic Heart Diseases", speakers: [{ name: "Asst. Prof. Dr. Mehmet Kocabey", id: "speaker-mehmet-kocabey" }] },
-                      { time: "12:15 - 12:45", title: "Lunch Break", isBreak: true },
-                      { time: "12:45 - 13:15", title: "Wellness Break", isBreak: true },
-                      { time: "13:15 - 14:00", title: "Oncology", subtitle: "Oncological Paradox: Treat Cancer or Save the Heart", speakers: [{ name: "Assoc. Prof. Oktay Halit Aktepe", id: "speaker-oktay-aktepe" }] },
-                      { time: "14:00 - 14:15", title: "Coffee Break", isBreak: true },
-                      { time: "14:15 - 15:15", title: "Cardiology and AI", subtitle: "Session 1: Cardiology 2.0 : Reinvention of Cardiology with AI (Prof. Dr. Tarık Kıvrak)\nSession 2: “This Diagnosis Was Made by AI” (Kutsal Baran Özkurt)", speakers: [{ name: "Prof. Dr. Tarık Kıvrak", id: "speaker-tarik-kivrak" }, { name: "Kutsal Baran Özkurt", id: "speaker-kutsal-baran" }] },
-                      { time: "15:15 - 15:30", title: "Coffee Break", isBreak: true },
-                      { time: "15:30 - 16:00", title: "Oral Presentations", isBreak: true },
-                      { time: "16:00 - 16:30", title: "Mind & Body Session", isBreak: true },
+                      { time: "11:30 - 12:15", title: "Cardiovascular Surgery", subtitle: "When Infection Demands Surgery: Endocarditis", speakers: [{ name: "Prof. Dr. Carlos A. Mestres", id: "speaker-carlos-mestres" }] },
+                      { time: "12:15 - 12:30", title: "Coffee Break", isBreak: true },
+                      { time: "12:30 - 13:15", title: "Genetics", subtitle: "A Mistake in the Ancient Ink: Syndromic Heart Diseases", speakers: [{ name: "Asst. Prof. Dr. Mehmet Kocabey", id: "speaker-mehmet-kocabey" }] },
+                      { time: "13:15 - 13:45", title: "Lunch Break", isBreak: true },
+                      { time: "13:45 - 14:15", title: "Wellness Break", isBreak: true },
+                      { time: "14:15 - 15:00", title: "Oncology", subtitle: "Oncological Paradox: Treat Cancer or Save the Heart", speakers: [{ name: "Assoc. Prof. Oktay Halit Aktepe", id: "speaker-oktay-aktepe" }] },
+                      { time: "15:00 - 15:15", title: "Coffee Break", isBreak: true },
+                      { time: "15:15 - 16:15", title: "Cardiology and AI", subtitle: "Session 1: Cardiology 2.0 : Reinvention of Cardiology with AI (Prof. Dr. Tarık Kıvrak)\nSession 2: “This Diagnosis Was Made by AI” (Kutsal Baran Özkurt)", speakers: [{ name: "Prof. Dr. Tarık Kıvrak", id: "speaker-tarik-kivrak" }, { name: "Kutsal Baran Özkurt", id: "speaker-kutsal-baran" }] },
+                      { time: "16:15 - 16:30", title: "Coffee Break", isBreak: true },
+                      { time: "16:30 - 17:00", title: "Oral Presentations", isBreak: true },
+                      { time: "17:00 - 17:30", title: "Mind & Body Session", isBreak: true },
                     ].map((item, idx) => (
                       <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                         <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-congress-red text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
