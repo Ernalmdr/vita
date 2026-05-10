@@ -687,7 +687,7 @@ Vita Cordis Organizing Committee`}
 export default function Home() {
   const [activeSection, setActiveSection] = useState("welcome");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeDay, setActiveDay] = useState<"day1" | "day2">("day1");
+
 
   const showSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -715,7 +715,7 @@ export default function Home() {
     { id: "organization", html: <>Organization<br />Committee</>, mobileText: "Organization Committee" },
     { id: "speakers", html: <>Invited<br />Speakers</>, mobileText: "Invited Speakers" },
     { id: "program", html: <>Scientific<br />Program</>, mobileText: "Scientific Program" },
-    { id: "schedule", html: <>Program<br />Schedule</>, mobileText: "Program Schedule" },
+    { id: "feedback", html: <>Feedback<br />Form</>, mobileText: "Feedback Form" },
     { id: "abstract", html: <>Abstract<br />Submission</>, mobileText: "Abstract Submission" },
     { id: "social", html: <>Social<br />Events</>, mobileText: "Social Events" },
     { id: "registration", html: <>Registration &<br />Accommodation</>, mobileText: "Registration & Accommodation" },
@@ -1330,141 +1330,27 @@ export default function Home() {
           </div>
         )}
 
-        {/* PROGRAM SCHEDULE */}
-        {activeSection === "schedule" && (
+        {/* FEEDBACK FORM */}
+        {activeSection === "feedback" && (
           <div className="page-section py-12">
             <div className="container mx-auto px-6 max-w-5xl">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Program Schedule</h2>
+              <div className="text-center mb-8">
+                <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Feedback Form</h2>
                 <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
-                <p className="text-gray-500 text-sm uppercase tracking-widest font-bold">Sessions and Panels Flow</p>
+                <p className="text-gray-500 text-lg">We value your feedback! Please fill out the evaluation form below.</p>
               </div>
-
-              <div className="flex flex-wrap justify-center gap-4 mb-12">
-                <button
-                  onClick={() => setActiveDay("day1")}
-                  className={`px-8 py-3 rounded-full font-bold transition-all shadow-sm border ${activeDay === "day1" ? 'bg-congress-red text-white border-congress-red' : 'bg-white text-gray-600 border-gray-200 hover:border-congress-red hover:text-congress-red'}`}
-                >
-                  09 May 2026
-                </button>
-                <button
-                  onClick={() => setActiveDay("day2")}
-                  className={`px-8 py-3 rounded-full font-bold transition-all shadow-sm border ${activeDay === "day2" ? 'bg-congress-red text-white border-congress-red' : 'bg-white text-gray-600 border-gray-200 hover:border-congress-red hover:text-congress-red'}`}
-                >
-                  10 May 2026
-                </button>
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden" style={{ minHeight: '600px' }}>
+                <iframe
+                  data-tally-src="https://tally.so/r/QKvdW1?transparentBackground=1"
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="Vita Cordis Overall Evaluation Form"
+                  style={{ border: 0, minHeight: '600px' }}
+                ></iframe>
               </div>
-
-              {/* Saturday Schedule */}
-              {activeDay === "day1" && (
-                <div className="mb-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="bg-congress-red text-white px-6 py-2 rounded-lg font-bold text-lg shadow-sm">
-                      09 May 2026
-                    </div>
-                    <h3 className="text-2xl font-serif text-gray-800">Saturday</h3>
-                  </div>
-
-                  <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
-                    {[
-                      { time: "09:15 - 09:30", title: "Opening Ceremony", isBreak: true },
-                      { time: "09:30 - 10:15", title: "Cardiology", subtitle: "Can We Turn This F to an A-: Heart Failure", speakers: [{ name: "Dr. Mladen Milovanovic", id: "speaker-mladen-milovanovic" }] },
-                      { time: "10:15 - 10:30", title: "Coffee Break", isBreak: true },
-                      { time: "10:30 - 11:15", title: "Cardiovascular Surgery", subtitle: "When Infection Demands Surgery: Endocarditis", speakers: [{ name: "Prof. Dr. Carlos A. Mestres", id: "speaker-carlos-mestres" }] },
-                      { time: "11:15 - 11:30", title: "Coffee Break", isBreak: true },
-                      { time: "11:30 - 12:15", title: "Genetics", subtitle: "A Mistake in the Ancient Ink: Syndromic Heart Diseases", speakers: [{ name: "Asst. Prof. Dr. Mehmet Kocabey", id: "speaker-mehmet-kocabey" }] },
-                      { time: "12:15 - 12:45", title: "Lunch Break", isBreak: true },
-                      { time: "12:45 - 13:15", title: "Wellness Break", isBreak: true },
-                      { time: "13:15 - 14:00", title: "Oncology", subtitle: "Oncological Paradox: Treat Cancer or Save the Heart", speakers: [{ name: "Assoc. Prof. Oktay Halit Aktepe", id: "speaker-oktay-aktepe" }] },
-                      { time: "14:00 - 14:15", title: "Coffee Break", isBreak: true },
-                      { time: "14:15 - 15:15", title: "Cardiology and AI", subtitle: "Session 1: Cardiology 2.0 : Reinvention of Cardiology with AI (Prof. Dr. Tarık Kıvrak)\nSession 2: “This Diagnosis Was Made by AI” (Kutsal Baran Özkurt)", speakers: [{ name: "Prof. Dr. Tarık Kıvrak", id: "speaker-tarik-kivrak" }, { name: "Kutsal Baran Özkurt", id: "speaker-kutsal-baran" }] },
-                      { time: "15:15 - 15:30", title: "Coffee Break", isBreak: true },
-                      { time: "15:30 - 16:00", title: "Oral Presentations", isBreak: true },
-                      { time: "16:00 - 16:30", title: "Mind & Body Session", isBreak: true },
-                    ].map((item, idx) => (
-                      <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                        <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-congress-red text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                          {item.isBreak ? <i className="fa-solid fa-mug-hot text-xs"></i> : <i className="fa-solid fa-stethoscope text-xs"></i>}
-                        </div>
-                        <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border ${item.isBreak ? 'bg-gray-50 border-gray-100' : 'bg-white border-gray-200 shadow-sm hover:shadow-md transition-shadow'} `}>
-                          <div className="flex items-center justify-between mb-1">
-                            <span className={`font-bold ${item.isBreak ? 'text-gray-500' : 'text-congress-red'}`}>{item.time}</span>
-                          </div>
-                          <h4 className={`text-lg font-bold text-gray-800 ${!item.subtitle && !item.isBreak ? 'mb-0' : 'mb-1'}`}>{item.title}</h4>
-                          {item.subtitle && <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{item.subtitle}</p>}
-                          {item.speakers && item.speakers.length > 0 && (
-                            <div className="mt-2 flex flex-col gap-1">
-                              {item.speakers.map((sp, i) => (
-                                <button
-                                  key={i}
-                                  onClick={() => goToSpeaker(sp.id)}
-                                  className="text-xs font-semibold text-congress-gold hover:text-congress-red transition-colors text-left flex items-center"
-                                >
-                                  <i className="fa-regular fa-user mr-1"></i> {sp.name}
-                                </button>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Sunday Schedule */}
-              {activeDay === "day2" && (
-                <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="bg-congress-red text-white px-6 py-2 rounded-lg font-bold text-lg shadow-sm">
-                      10 May 2026
-                    </div>
-                    <h3 className="text-2xl font-serif text-gray-800">Sunday</h3>
-                  </div>
-
-                  <div className="space-y-4 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-200 before:to-transparent">
-                    {[
-                      { time: "09:30 - 10:15", title: "Psychiatry", subtitle: "The Shadow of Schizophrenia", speakers: [{ name: "Prof. Dr. Köksal Alptekin", id: "speaker-koksal-alptekin" }] },
-                      { time: "10:15 - 10:30", title: "Coffee Break", isBreak: true },
-                      { time: "10:30 - 11:00", title: "Environmental Health", subtitle: "The Ghost in Every Breath: The Air Around Us", speakers: [{ name: "Prof. Artur Badyda", id: "speaker-artur-badyda" }] },
-                      { time: "11:00 - 11:15", title: "Coffee Break", isBreak: true },
-                      { time: "11:15 - 12:00", title: "Nephrology", subtitle: "Wrinkles? Never Heart of Them: Aging vs. Kidneys", speakers: [{ name: "Prof. Dr. Alberto Ortiz", id: "speaker-alberto-ortiz" }] },
-                      { time: "12:00 - 13:00", title: "Lunch Break", isBreak: true },
-                      { time: "13:00 - 13:45", title: "Metabolism", subtitle: "Are You Eating Sugar or Is the Sugar Eating Your Heart?", speakers: [{ name: "Prof. Dr. Yasir Zaroug", id: "speaker-yasir-zaroug" }] },
-                      { time: "13:45 - 14:00", title: "Coffee Break", isBreak: true },
-                      { time: "14:00 - 14:45", title: "Beyond the White Coat", subtitle: "The Real Journey of Medicine" },
-                      { time: "14:50", title: "Closing Ceremony", isBreak: true },
-                    ].map((item, idx) => (
-                      <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                        <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-congress-red text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
-                          {item.isBreak ? <i className="fa-solid fa-mug-hot text-xs"></i> : <i className="fa-solid fa-stethoscope text-xs"></i>}
-                        </div>
-                        <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-xl border ${item.isBreak ? 'bg-gray-50 border-gray-100' : 'bg-white border-gray-200 shadow-sm hover:shadow-md transition-shadow'} `}>
-                          <div className="flex items-center justify-between mb-1">
-                            <span className={`font-bold ${item.isBreak ? 'text-gray-500' : 'text-congress-red'}`}>{item.time}</span>
-                          </div>
-                          <h4 className={`text-lg font-bold text-gray-800 ${!item.subtitle && !item.isBreak ? 'mb-0' : 'mb-1'}`}>{item.title}</h4>
-                          {item.subtitle && <p className="text-sm text-gray-600 mb-2 whitespace-pre-line">{item.subtitle}</p>}
-                          {item.speakers && item.speakers.length > 0 && (
-                            <div className="mt-2 flex flex-col gap-1">
-                              {item.speakers.map((sp, i) => (
-                                <button
-                                  key={i}
-                                  onClick={() => goToSpeaker(sp.id)}
-                                  className="text-xs font-semibold text-congress-gold hover:text-congress-red transition-colors text-left flex items-center"
-                                >
-                                  <i className="fa-regular fa-user mr-1"></i> {sp.name}
-                                </button>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
             </div>
           </div>
         )}

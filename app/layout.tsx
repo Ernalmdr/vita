@@ -29,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className={`${lato.variable} ${playfair.variable}`}>
       <head>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+        <script async src="https://tally.so/widgets/embed.js"></script>
       </head>
       <body>{children}</body>
     </html>
