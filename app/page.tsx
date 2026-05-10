@@ -12,13 +12,13 @@ type AccomKey = "none" | "room1" | "room2" | "room3";
 
 const PRICES: Record<Origin, Record<Role, Record<AccomKey, number>>> = {
   local: {
-    specialist:  { none: 1250, room1: 3800, room2: 2500, room3: 2500 }, // Base (750/3300/2000) + 500 TL
-    physician:   { none: 1000, room1: 3550, room2: 2250, room3: 2250 }, // Base + 250 TL
-    med_student: { none: 750,  room1: 3500, room2: 2500, room3: 1500 }, // Base + 0
+    specialist: { none: 1250, room1: 3800, room2: 2500, room3: 2500 }, // Base (750/3300/2000) + 500 TL
+    physician: { none: 1000, room1: 3550, room2: 2250, room3: 2250 }, // Base + 250 TL
+    med_student: { none: 750, room1: 3500, room2: 2500, room3: 1500 }, // Base + 0
   },
   international: {
-    specialist:  { none: 25, room1: 75, room2: 50, room3: 50 }, // Base (15/65/40) + 10 €
-    physician:   { none: 20, room1: 70, room2: 45, room3: 45 }, // Base + 5 €
+    specialist: { none: 25, room1: 75, room2: 50, room3: 50 }, // Base (15/65/40) + 10 €
+    physician: { none: 20, room1: 70, room2: 45, room3: 45 }, // Base + 5 €
     med_student: { none: 15, room1: 65, room2: 40, room3: 40 }, // Base + 0
   },
 };
@@ -118,8 +118,8 @@ function RegistrationWizard() {
             {progressSteps.map((label, i) => (
               <div key={i} className="relative z-10 flex flex-col items-center gap-1">
                 <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${step > i ? 'bg-congress-red text-white shadow-md' :
-                    step === i ? 'bg-congress-red text-white ring-4 ring-congress-red/20 shadow-lg' :
-                      'bg-white border-2 border-gray-200 text-gray-400'
+                  step === i ? 'bg-congress-red text-white ring-4 ring-congress-red/20 shadow-lg' :
+                    'bg-white border-2 border-gray-200 text-gray-400'
                   }`}>
                   {step > i ? <i className="fa-solid fa-check text-[10px]" /> : i + 1}
                 </div>
@@ -721,7 +721,7 @@ function FeedbackSection() {
 
 // ── Main page component ───────────────────────────────────────────────────────
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("welcome");
+  const [activeSection, setActiveSection] = useState("feedback");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 
@@ -1448,7 +1448,7 @@ export default function Home() {
                   <div className="w-full md:w-2/3">
                     <h3 className="text-3xl font-serif font-bold text-congress-red mb-4">Accommodation</h3>
                     <div className="w-16 h-1 bg-congress-gold mb-6"></div>
-                    
+
                     <div className="text-gray-600 space-y-4 text-justify leading-relaxed">
                       <p>Participants will be accommodated at <strong>Plaza Hotel İzmir</strong>, located in the Balçova district of İzmir.</p>
                       <p>The hotel is situated within walking distance of the congress venue at Dokuz Eylül University Faculty of Medicine, allowing easy and convenient access throughout the event. The distance between the hotel and the congress venue is approximately a five-minute walk, making transportation simple and comfortable for our participants.</p>
@@ -1456,7 +1456,7 @@ export default function Home() {
                         <i className="fa-solid fa-circle-info text-congress-red mt-0.5 flex-shrink-0" />
                         <span>Participants wishing to stay for more than one night are welcome to contact us directly at <a href="mailto:vita.cordis.2026@gmail.com" className="font-bold text-congress-red hover:underline">vita.cordis.2026@gmail.com</a> to arrange extended accommodation.</span>
                       </p>
-                      
+
 
                     </div>
                   </div>
@@ -1469,7 +1469,7 @@ export default function Home() {
                   <h3 className="text-2xl font-serif font-bold text-gray-900 mb-2">Registration Form</h3>
                   <p className="text-gray-500">Please complete the steps below to register for the congress.</p>
                 </div>
-                
+
                 <RegistrationWizard />
               </div>
             </div>
