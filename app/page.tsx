@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { submitRegistration } from "@/app/actions/submit-registration";
 import { UploadDropzone } from "../utils/uploadthing";
 import { PopupModal } from "@/components/home/popup-modal";
@@ -683,6 +683,42 @@ Vita Cordis Organizing Committee`}
   );
 }
 
+// ── Feedback Form (Tally embed) ────────────────────────────────────────────────
+function FeedbackSection() {
+  useEffect(() => {
+    // Load Tally embeds when component mounts
+    const w = window as unknown as { Tally?: { loadEmbeds: () => void } };
+    if (w.Tally) {
+      w.Tally.loadEmbeds();
+    }
+  }, []);
+
+  return (
+    <div className="page-section py-12">
+      <div className="container mx-auto px-6 max-w-5xl">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Feedback Form</h2>
+          <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
+          <p className="text-gray-500 text-lg">We value your feedback! Please fill out the evaluation form below.</p>
+        </div>
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden p-4 md:p-8">
+          <iframe
+            data-tally-src="https://tally.so/embed/QKvdW1?alignLeft=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy"
+            width="100%"
+            height="6336"
+            frameBorder="0"
+            marginHeight={0}
+            marginWidth={0}
+            title="Vita Cordis Overall Evaluation Form"
+            style={{ border: 0 }}
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Main page component ───────────────────────────────────────────────────────
 export default function Home() {
   const [activeSection, setActiveSection] = useState("welcome");
@@ -1331,29 +1367,7 @@ export default function Home() {
         )}
 
         {/* FEEDBACK FORM */}
-        {activeSection === "feedback" && (
-          <div className="page-section py-12">
-            <div className="container mx-auto px-6 max-w-5xl">
-              <div className="text-center mb-8">
-                <h2 className="text-4xl md:text-5xl font-serif text-congress-red mb-4">Feedback Form</h2>
-                <div className="w-24 h-1 bg-congress-red mx-auto mb-6"></div>
-                <p className="text-gray-500 text-lg">We value your feedback! Please fill out the evaluation form below.</p>
-              </div>
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden" style={{ minHeight: '600px' }}>
-                <iframe
-                  data-tally-src="https://tally.so/r/QKvdW1?transparentBackground=1"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  title="Vita Cordis Overall Evaluation Form"
-                  style={{ border: 0, minHeight: '600px' }}
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        )}
+        {activeSection === "feedback" && <FeedbackSection />}
 
         {/* ABSTRACT SUBMISSION */}
         {activeSection === "abstract" && (
