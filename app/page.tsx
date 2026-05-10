@@ -1432,7 +1432,7 @@ export default function Home() {
                       { time: "12:00 - 13:00", title: "Lunch Break", isBreak: true },
                       { time: "13:00 - 13:45", title: "Metabolism", subtitle: "Are You Eating Sugar or Is the Sugar Eating Your Heart?", speakers: [{ name: "Prof. Dr. Yasir Zaroug", id: "speaker-yasir-zaroug" }] },
                       { time: "13:45 - 14:00", title: "Coffee Break", isBreak: true },
-                      { time: "14:00 - 14:45", title: "Beyond the White Coat", subtitle: "The Real Journey of Medicine" },
+                      { time: "14:00 - 14:45", title: "Pediatric Cardiology", subtitle: "Where the life begins" },
                       { time: "14:50", title: "Closing Ceremony", isBreak: true },
                     ].map((item, idx) => (
                       <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
